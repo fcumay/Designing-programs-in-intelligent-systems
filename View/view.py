@@ -5,6 +5,7 @@ from kivy.core.window import Window
 from View.ui import KV
 
 from Model.model import Model
+from Controller.controller import Controller
 
 Builder.load_string(KV)
 
@@ -26,7 +27,7 @@ class BaseScreen(Screen):
 
     def upd(self):
         self.ids['base_label_id'].text = BaseScreen.base(self)
-        Model.save(Model)
+        Controller.save(Model)
 
 
 
@@ -96,7 +97,7 @@ class DeleteScreen(Screen):
 
 class UploadScreen(Screen):
     def upload(self,file_name):
-        Model.upload(Model,file_name)
+        Controller.upload(Model,file_name)
 
 
 
