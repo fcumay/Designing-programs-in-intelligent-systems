@@ -79,11 +79,11 @@ class DeleteScreen(Screen):
         else:
             self.deleted_string = ''
             for index in reversed(SearchScreen.search(self, full_name, group, valid_reason, invalid_reason)):
-                self.deleted_string += f"{BaseScreen.information['full_name'][index]} {BaseScreen.information['group'][index]} [{BaseScreen.information['valid_reason'][index]}, {BaseScreen.information['invalid_reason'][index]}] \n"
-                del BaseScreen.information['full_name'][index]
-                del BaseScreen.information['group'][index]
-                del BaseScreen.information['valid_reason'][index]
-                del BaseScreen.information['invalid_reason'][index]
+                self.deleted_string += f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] \n"
+                del Model.information['full_name'][index]
+                del Model.information['group'][index]
+                del Model.information['valid_reason'][index]
+                del Model.information['invalid_reason'][index]
 
     def upd(self):
         self.ids['delete_label_id'].text = self.deleted_string
