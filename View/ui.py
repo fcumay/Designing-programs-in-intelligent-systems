@@ -25,6 +25,7 @@ KV =  """
             Button:
                 text:'Upload'
                 background_color: .78,.57,.87,.6
+                on_press: root.manager.current = 'upload'
         
 
 <BaseScreen>:
@@ -164,5 +165,19 @@ KV =  """
                 id:delete_label_id
                 text: ''
                 color: 0,0,0,1
-               
+<UploadScreen>
+    BoxLayout:
+        orientation:'horizontal'                
+    TextInput:
+        id:file
+        hint_text:'File path' 
+    Button:
+        text: 'Done'
+        size_hint: 1,.1
+        background_color: .78,.57,.87,.8
+        on_press:
+            root.upload(file.text) 
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'menu'
+            
 """

@@ -17,7 +17,7 @@ class BaseScreen(Screen):
         print(len(Model.information['full_name']))
         information_string = ''
         for name in range(len(Model.information['full_name'])):
-            information_string += f"{name + 1}) {self.information['full_name'][name]}" \
+            information_string += f"{name + 1}) {Model.information['full_name'][name]}" \
                                   f" {Model.information['group'][name]} [ " \
                                   f"{str(Model.information['valid_reason'][name])}, " \
                                   f"{str(Model.information['invalid_reason'][name])} ] \n"
@@ -37,10 +37,10 @@ class StudentsScreen(Screen):
 
 class AddScreen(Screen):
     def add(self, full_name, group, valid_reason, invalid_reason):
-        BaseScreen.information['full_name'].append(full_name)
-        BaseScreen.information['group'].append(group)
-        BaseScreen.information['valid_reason'].append(int(valid_reason))
-        BaseScreen.information['invalid_reason'].append(int(invalid_reason))
+        Model.information['full_name'].append(full_name)
+        Model.information['group'].append(group)
+        Model.information['valid_reason'].append(int(valid_reason))
+        Model.information['invalid_reason'].append(int(invalid_reason))
 
 
 class SearchScreen(Screen):
@@ -91,6 +91,12 @@ class DeleteScreen(Screen):
 
     def upd(self):
         self.ids['delete_label_id'].text = self.deleted_string
+        Model.save()
+
+class UploadScreen(Screen):
+    def upload(self,file_name):
+        Model.upload(Model,file_name)
+
 
 
 class TestApp(App):
@@ -104,5 +110,6 @@ class TestApp(App):
         sm.add_widget(AddScreen(name='add'))
         sm.add_widget(SearchScreen(name='search'))
         sm.add_widget(DeleteScreen(name='delete'))
+        sm.add_widget(UploadScreen(name='upload'))
 
         return sm
