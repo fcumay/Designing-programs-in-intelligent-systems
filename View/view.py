@@ -9,13 +9,14 @@ from Controller.controller import Controller
 
 Builder.load_string(KV)
 
+
 class MenuScreen(Screen):
     pass
+
 
 class BaseScreen(Screen):
 
     def base(self):
-        print(len(Model.information['full_name']))
         information_string = ''
         for name in range(len(Model.information['full_name'])):
             information_string += f"{name + 1}) {Model.information['full_name'][name]}" \
@@ -28,13 +29,6 @@ class BaseScreen(Screen):
     def upd(self):
         self.ids['base_label_id'].text = BaseScreen.base(self)
         Controller.save(Model)
-
-
-
-
-
-class StudentsScreen(Screen):
-    pass
 
 
 class AddScreen(Screen):
@@ -51,23 +45,23 @@ class SearchScreen(Screen):
     def search(self, full_name, group, valid_reason, invalid_reason):
         list_of_index = []
         if full_name != '':
-            list_of_index = [i for i in range(len(BaseScreen.information['full_name'])) if
-                             full_name.lower() in BaseScreen.information['full_name'][i].lower()]
+            list_of_index = [i for i in range(len(Model.information['full_name'])) if
+                             full_name.lower() in Model.information['full_name'][i].lower()]
         elif group != '':
-            list_of_index = [i for i in range(len(BaseScreen.information['group'])) if
-                             group in BaseScreen.information['group'][i]]
+            list_of_index = [i for i in range(len(Model.information['group'])) if
+                             group in Model.information['group'][i]]
         elif valid_reason != '':
-            list_of_index = [i for i in range(len(BaseScreen.information['valid_reason'])) if
-                             int(valid_reason) == BaseScreen.information['valid_reason'][i]]
+            list_of_index = [i for i in range(len(Model.information['valid_reason'])) if
+                             int(valid_reason) == Model.information['valid_reason'][i]]
         elif invalid_reason != '':
-            list_of_index = [i for i in range(len(BaseScreen.information['invalid_reason'])) if
-                             int(invalid_reason) == BaseScreen.information['invalid_reason'][i]]
+            list_of_index = [i for i in range(len(Model.information['invalid_reason'])) if
+                             int(invalid_reason) == Model.information['invalid_reason'][i]]
         if (len(list_of_index) == 0):
             self.found_string = 'Matches have not been found!'
             return 'Matches have not been found!'
         else:
             self.found_string = ''.join([
-                f"{BaseScreen.information['full_name'][index]} {BaseScreen.information['group'][index]} [{BaseScreen.information['valid_reason'][index]}, {BaseScreen.information['invalid_reason'][index]}] \n"
+                f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] \n"
                 for index in list_of_index])
             return list_of_index
 
@@ -96,9 +90,8 @@ class DeleteScreen(Screen):
 
 
 class UploadScreen(Screen):
-    def upload(self,file_name):
-        Controller.upload(Model,file_name)
-
+    def upload(self, file_name):
+        Controller.upload(Model, file_name)
 
 
 class TestApp(App):

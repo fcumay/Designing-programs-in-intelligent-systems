@@ -300,4 +300,10 @@
            <student_valid_reason>2</student_valid_reason>
            <student_invalid_reason>2</student_invalid_reason>
        </students>
+       <students>
+           <student_full_name>Войшнис Майя Александровна</student_full_name>
+           <student_group>021702</student_group>
+           <student_valid_reason>0</student_valid_reason>
+           <student_invalid_reason>0</student_invalid_reason>
+       </students>
    </data>
