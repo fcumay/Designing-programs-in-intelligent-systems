@@ -3,7 +3,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
-from ui import KV
+from View.ui import KV
 import write
 
 
@@ -114,8 +114,8 @@ class TestApp(App):
     def build(self):
         self.title = "Attendance"
         sm = ScreenManager()
-        sm.add_widget(BaseScreen(name='base'))
         sm.add_widget(MenuScreen(name='menu'))
+        sm.add_widget(BaseScreen(name='base'))
         sm.add_widget(AddScreen(name='add'))
         sm.add_widget(SearchScreen(name='search'))
         sm.add_widget(DeleteScreen(name='delete'))

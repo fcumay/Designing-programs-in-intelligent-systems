@@ -21,7 +21,11 @@ KV =  """
             Button:
                 text:'Delete'
                 background_color: .78,.57,.87,.8
-                on_press: root.manager.current = 'delete'          
+                on_press: root.manager.current = 'delete' 
+            Button:
+                text:'Upload'
+                background_color: .78,.57,.87,.6
+        
 
 <BaseScreen>:
     BoxLayout:
