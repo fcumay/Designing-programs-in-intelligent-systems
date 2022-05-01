@@ -26,6 +26,7 @@ class BaseScreen(Screen):
 
     def upd(self):
         self.ids['base_label_id'].text = BaseScreen.base(self)
+        Model.save(Model)
 
 
 
@@ -91,7 +92,7 @@ class DeleteScreen(Screen):
 
     def upd(self):
         self.ids['delete_label_id'].text = self.deleted_string
-        Model.save()
+
 
 class UploadScreen(Screen):
     def upload(self,file_name):
