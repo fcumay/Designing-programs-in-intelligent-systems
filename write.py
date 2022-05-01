@@ -33,9 +33,3 @@ def make_xml(lst):
 
     return doc
 
-# make_xml().writexml(open('new.xml','w',encoding='utf-8'),
-#                          indent="   ",
-#                          addindent="    ",
-#                          newl='\n'
-#                          )
-

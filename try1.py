@@ -1,4 +1,4 @@
-import dirt2
+import read
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -14,7 +14,7 @@ class MenuScreen(Screen):
     pass
 
 class BaseScreen(Screen):
-    handler = dirt2.Reader()
+    handler = read.Reader()
     handler.parser.setContentHandler(handler)
     handler.parser.parse("students.xml")
 
