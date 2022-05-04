@@ -1,3 +1,5 @@
+import math
+
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -15,7 +17,7 @@ class MenuScreen(Screen):
 
 
 class BaseScreen(Screen):
-
+    curr_page=0
     def base(self):
         information_string = ''
         for name in range(len(Model.information['full_name'])):
@@ -23,12 +25,31 @@ class BaseScreen(Screen):
                                   f" {Model.information['group'][name]} [ " \
                                   f"{str(Model.information['valid_reason'][name])}, " \
                                   f"{str(Model.information['invalid_reason'][name])} ] \n"
-        print(Model.information)
         return information_string
 
-    def upd(self):
-        self.ids['base_label_id'].text = BaseScreen.base(self)
+    def upd(self,navigation=0):
+        BaseScreen.base(self)
+        if navigation==-1:
+            self.curr_page-=1
+        elif navigation==1:
+            self.curr_page+=1
+        self.next_page()
         Controller.save(Model)
+    def next_page(self):
+        number_of_strings=10
+        info=''
+        start=self.curr_page*number_of_strings
+        for i in range(start,start+number_of_strings):
+            if len(Model.information['full_name'])<=i:
+                self.curr_page=-1
+                break
+            elif start<0:
+                self.curr_page=math.floor(len(Model.information['full_name'])/number_of_strings)
+                print(self.curr_page)
+                break
+            else:
+                info+=f"{i+1}){Model.information['full_name'][i]} {Model.information['group'][i]} [{Model.information['valid_reason'][i]}, {Model.information['invalid_reason'][i]}] \n"
+        self.ids['base_label_id'].text = info
 
 
 class AddScreen(Screen):

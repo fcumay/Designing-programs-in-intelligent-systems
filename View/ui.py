@@ -1,4 +1,4 @@
-KV =  """
+KV = """
 <MenuScreen>:
     BoxLayout:
         orientation: 'horizontal'
@@ -9,7 +9,7 @@ KV =  """
                 background_color: .78,.57,.87,.6
                 on_press: 
                     root.manager.current = 'base'
-                
+
             Button:
                 text:'Add'
                 background_color: .78,.57,.87,.8
@@ -26,7 +26,7 @@ KV =  """
                 text:'Upload'
                 background_color: .78,.57,.87,.6
                 on_press: root.manager.current = 'upload'
-        
+
 
 <BaseScreen>:
     BoxLayout:
@@ -39,13 +39,13 @@ KV =  """
                 on_press: 
                     root.manager.transition.direction = 'right'
                     root.manager.current = 'menu'
-    
+
             Label:
                 id:base_label_id
                 text: root.base()
                 color: 0,0,0,1
                 size_hint: 8,1     
-                
+
             Button:
                 text: 'Update'
                 background_color: .78,.57,.87,.8
@@ -56,10 +56,12 @@ KV =  """
             Button:
                 text: 'Previos'
                 background_color: .62,.48,.63,1
+                on_press: root.upd(-1)
             Button:
                 text: 'Next'
                 background_color: .62,.48,.63,1
-    
+                on_press: root.upd(1)
+
 
 
 
@@ -158,7 +160,7 @@ KV =  """
                 on_press: 
                     root.delete(full_name.text,group.text,valid_reason.text,invalid_reason.text)
                     root.upd()
-                          
+
                 text: 'Delete'
                 background_color: .78,.57,.87,.8
             Label:
@@ -179,5 +181,5 @@ KV =  """
             root.upload(file.text) 
             root.manager.transition.direction = 'right'
             root.manager.current = 'menu'
-            
+
 """
