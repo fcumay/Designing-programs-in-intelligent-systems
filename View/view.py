@@ -117,7 +117,7 @@ class UploadScreen(Screen):
             Controller.upload(Model, file_name)
             self.manager.current = 'menu'
         else:
-            self.ids['file'].text='No such file\nTry again!'
+            self.ids['file'].text='No such file!'
 
 
 
