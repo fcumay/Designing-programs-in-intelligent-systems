@@ -189,8 +189,6 @@ KV = """
         size_hint: 1,.1
         background_color: .78,.57,.87,.8
         on_press:
-            root.upload(file.text) 
+            root.upload(file.text)
             root.manager.transition.direction = 'right'
-            root.manager.current = 'menu'
-
 """

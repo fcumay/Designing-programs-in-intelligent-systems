@@ -1,4 +1,5 @@
 import math
+import os.path
 
 from kivy.app import App
 from kivy.lang import Builder
@@ -112,7 +113,12 @@ class DeleteScreen(Screen):
 
 class UploadScreen(Screen):
     def upload(self, file_name):
-        Controller.upload(Model, file_name)
+        if os.path.exists(file_name):
+            Controller.upload(Model, file_name)
+            self.manager.current = 'menu'
+        else:
+            self.ids['file'].text='No such file\nTry again!'
+
 
 
 class TestApp(App):
