@@ -38,14 +38,12 @@ KV = """
                 background_color: .78,.57,.87,.8
                 on_press: 
                     root.manager.transition.direction = 'right'
-                    root.manager.current = 'menu'
-
+                    root.manager.current = 'menu'                
             Label:
                 id:base_label_id
                 text: root.base()
                 color: 0,0,0,1
                 size_hint: 8,1     
-
             Button:
                 text: 'Update'
                 background_color: .78,.57,.87,.8
@@ -124,13 +122,18 @@ KV = """
                 on_press: root.find(full_name.text,group.text,valid_reason.text,invalid_reason.text)
                 text: 'Search'
                 background_color: .78,.57,.87,.8
-
-            Label:
-                id:search_label_id
-                text: ''
-                color: 0,0,0,1
-
-
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+            
+                Label:
+                    id:search_label_id
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    padding: 5, 5
+                    text: ''
+                    color: 0,0,0,1
 <DeleteScreen>:
     BoxLayout:                   
         Button:
@@ -163,10 +166,18 @@ KV = """
 
                 text: 'Delete'
                 background_color: .78,.57,.87,.8
-            Label:
-                id:delete_label_id
-                text: ''
-                color: 0,0,0,1
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+            
+                Label:
+                    id:delete_label_id
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    padding: 5, 5
+                    text: ''
+                    color: 0,0,0,1
 <UploadScreen>
     BoxLayout:
         orientation:'horizontal'                
