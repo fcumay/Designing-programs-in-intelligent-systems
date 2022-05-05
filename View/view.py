@@ -88,7 +88,7 @@ class SearchScreen(Screen):
             return 'Matches have not been found!'
         else:
             self.found_string = ''.join([
-                f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] \n"
+                f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] ({Model.information['totall'][index]}) \n"
                 for index in list_of_index])
             return list_of_index
 
@@ -106,7 +106,7 @@ class DeleteScreen(Screen):
         else:
             self.deleted_string = ''
             for index in reversed(SearchScreen.search(self, full_name, group, valid_reason, invalid_reason)):
-                self.deleted_string += f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] \n"
+                self.deleted_string += f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] ({Model.information['totall'][index]}) \n"
                 del Model.information['full_name'][index]
                 del Model.information['group'][index]
                 del Model.information['valid_reason'][index]
