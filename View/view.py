@@ -117,13 +117,11 @@ class DeleteScreen(Screen):
 
 
 class UploadScreen(Screen):
-    def upload(self, file_name):
-        if os.path.exists(file_name):
-            Controller.upload(Model, file_name)
+    def upload_file(self,file_name):
+        if Controller.upload_file(self,file_name):
             self.manager.current = 'menu'
         else:
             self.ids['file'].text = 'No such file!'
-
 
 class TestApp(App):
     Window.clearcolor = (.81, .77, .87, 1)
