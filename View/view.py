@@ -54,7 +54,7 @@ class AddScreen(Screen):
         Model.information['totall'].append(int(valid_reason)+int(invalid_reason))
 
     def input_validation(self, full_name, group, valid_reason, invalid_reason):
-        if full_name == '' or not full_name.isalpha():
+        if full_name == '' or not full_name.replace(' ','').isalpha():
             self.ids['full_name'].text = 'Invalid input!'
         elif group == '':
             self.ids['group'].text = 'Invalid input!'
