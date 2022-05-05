@@ -16,7 +16,6 @@ Builder.load_string(KV)
 class MenuScreen(Screen):
     pass
 
-
 class BaseScreen(Screen):
     curr_page=0
     def base(self):
@@ -54,11 +53,22 @@ class BaseScreen(Screen):
 
 
 class AddScreen(Screen):
-    def add(self, full_name, group, valid_reason, invalid_reason):
+    def add(self,full_name, group, valid_reason, invalid_reason):
         Model.information['full_name'].append(full_name)
         Model.information['group'].append(group)
         Model.information['valid_reason'].append(int(valid_reason))
         Model.information['invalid_reason'].append(int(invalid_reason))
+    def input_validation(self, full_name, group, valid_reason, invalid_reason):
+        if full_name=='' or not full_name.isalpha():
+            self.ids['full_name'].text='Invalid input!'
+        elif group=='':
+            self.ids['group'].text='Invalid input!'
+        elif not valid_reason.isdigit() or valid_reason=='':
+            self.ids['valid_reason'].text = 'Invalid input!'
+        elif not invalid_reason.isdigit() or invalid_reason=='':
+            self.ids['invalid_reason'].text = 'Invalid input!'
+        else:
+            self.add(full_name, group, valid_reason, invalid_reason)
 
 
 class SearchScreen(Screen):

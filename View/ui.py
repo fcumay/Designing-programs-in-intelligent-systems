@@ -7,7 +7,7 @@ KV = """
             Button:
                 text:'Base'
                 background_color: .78,.57,.87,.6
-                on_press: 
+                on_press:
                     root.manager.current = 'base'
 
             Button:
@@ -89,7 +89,7 @@ KV = """
                 id:invalid_reason
                 hint_text:'Invalid reason'
             Button:
-                on_press: root.add(full_name.text,group.text,valid_reason.text,invalid_reason.text)
+                on_press: root.input_validation(full_name.text,group.text,valid_reason.text,invalid_reason.text)
                 text: 'Done'
                 background_color: .78,.57,.87,.8
 
