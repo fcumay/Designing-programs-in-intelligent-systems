@@ -41,7 +41,6 @@ KV = """
                     root.manager.current = 'menu'                
             Label:
                 id:base_label_id
-                text: root.base()
                 color: 0,0,0,1
                 size_hint: 8,1     
             Button:
