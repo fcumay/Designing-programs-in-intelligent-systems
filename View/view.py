@@ -26,7 +26,7 @@ class BaseScreen(Screen):
         elif navigation == 1:
             self.curr_page += 1
         self.next_page()
-        Controller.save(Model)
+        Controller.save_file(self)
 
     def next_page(self):
         number_of_strings = 10
@@ -118,7 +118,7 @@ class DeleteScreen(Screen):
 
 class UploadScreen(Screen):
     def upload_file(self,file_name):
-        if Controller.upload_file(self,file_name):
+        if Controller.upload_file(Controller,file_name):
             self.manager.current = 'menu'
         else:
             self.ids['file'].text = 'No such file!'
