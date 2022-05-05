@@ -51,10 +51,10 @@ class AddScreen(Screen):
         Model.information['group'].append(group)
         Model.information['valid_reason'].append(int(valid_reason))
         Model.information['invalid_reason'].append(int(invalid_reason))
-        Model.information['totall'].append(int(valid_reason)+int(invalid_reason))
+        Model.information['totall'].append(int(valid_reason) + int(invalid_reason))
 
     def input_validation(self, full_name, group, valid_reason, invalid_reason):
-        if full_name == '' or not full_name.replace(' ','').isalpha():
+        if full_name == '' or not full_name.replace(' ', '').isalpha():
             self.ids['full_name'].text = 'Invalid input!'
         elif group == '':
             self.ids['group'].text = 'Invalid input!'
@@ -91,6 +91,7 @@ class SearchScreen(Screen):
                 f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] \n"
                 for index in list_of_index])
             return list_of_index
+
     def find(self, full_name, group, valid_reason, invalid_reason):
         self.search(full_name, group, valid_reason, invalid_reason)
         self.ids['search_label_id'].text = self.found_string

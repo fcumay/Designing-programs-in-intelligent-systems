@@ -1,12 +1,9 @@
-
 from xml.dom.minidom import Document
 
 
-
 def make_xml(lst):
-
     doc = Document()
-    data=doc.createElement("data")
+    data = doc.createElement("data")
     doc.appendChild(data)
     for i in range(len(lst['full_name'])):
         students = doc.createElement("students")
@@ -29,7 +26,4 @@ def make_xml(lst):
 
         data.appendChild(students)
 
-
-
     return doc
-
