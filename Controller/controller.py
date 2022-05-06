@@ -36,4 +36,4 @@ class Controller:
 
 # addScreen to mvc
 # проблемы с next_page()
-# сделац много файлов.xml
+
