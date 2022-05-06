@@ -42,23 +42,8 @@ class SearchScreen(Screen):
 
 
 class DeleteScreen(Screen):
-    deleted_string = ''
-
-    def delete(self, full_name, group, valid_reason, invalid_reason):
-        if SearchScreen.search(self, full_name, group, valid_reason, invalid_reason) == 'Matches have not been found!':
-            self.deleted_string = 'Matches have not been found'
-        else:
-            self.deleted_string = ''
-            for index in reversed(SearchScreen.search(self, full_name, group, valid_reason, invalid_reason)):
-                self.deleted_string += f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] ({Model.information['totall'][index]}) \n"
-                del Model.information['full_name'][index]
-                del Model.information['group'][index]
-                del Model.information['valid_reason'][index]
-                del Model.information['invalid_reason'][index]
-                del Model.information['totall'][index]
-
-    def upd(self):
-        self.ids['delete_label_id'].text = self.deleted_string
+    def delete(self,full_name, group, valid_reason, invalid_reason):
+        self.ids['delete_label_id'].text = Controller.delete(Controller, full_name, group, valid_reason, invalid_reason)
 
 
 class UploadScreen(Screen):

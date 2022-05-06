@@ -161,8 +161,6 @@ KV = """
             Button:
                 on_press: 
                     root.delete(full_name.text,group.text,valid_reason.text,invalid_reason.text)
-                    root.upd()
-
                 text: 'Delete'
                 background_color: .78,.57,.87,.8
             ScrollView:
