@@ -60,3 +60,24 @@ class Model:
         Model.information['valid_reason'].append(int(valid_reason))
         Model.information['invalid_reason'].append(int(invalid_reason))
         Model.information['totall'].append(int(valid_reason) + int(invalid_reason))
+
+    def searching(self, full_name, group, valid_reason, invalid_reason):
+        list_of_index = []
+        if full_name != '':
+            list_of_index = [i for i in range(len(Model.information['full_name'])) if
+                             full_name.lower() in Model.information['full_name'][i].lower()]
+        elif group != '':
+            list_of_index = [i for i in range(len(Model.information['group'])) if
+                             group in Model.information['group'][i]]
+        elif valid_reason != '':
+            list_of_index = [i for i in range(len(Model.information['valid_reason'])) if
+                             int(valid_reason) == Model.information['valid_reason'][i]]
+        elif invalid_reason != '':
+            list_of_index = [i for i in range(len(Model.information['invalid_reason'])) if
+                             int(invalid_reason) == Model.information['invalid_reason'][i]]
+        return list_of_index
+
+    def find(self, list_of_index):
+        found_string = ''.join([f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] ({Model.information['totall'][index]}) \n"
+            for index in list_of_index])
+        return (found_string)
