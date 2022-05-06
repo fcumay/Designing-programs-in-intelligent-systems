@@ -18,18 +18,11 @@ class MenuScreen(Screen):
 
 
 class BaseScreen(Screen):
-    def update(self,navigation=0):
-        self.ids['base_label_id'].text = Controller.update(Controller,navigation)
+    def update(self, navigation=0):
+        self.ids['base_label_id'].text = Controller.update(Controller, navigation)
 
 
 class AddScreen(Screen):
-    def add(self, full_name, group, valid_reason, invalid_reason):
-        Model.information['full_name'].append(full_name)
-        Model.information['group'].append(group)
-        Model.information['valid_reason'].append(int(valid_reason))
-        Model.information['invalid_reason'].append(int(invalid_reason))
-        Model.information['totall'].append(int(valid_reason) + int(invalid_reason))
-
     def input_validation(self, full_name, group, valid_reason, invalid_reason):
         if full_name == '' or not full_name.replace(' ', '').isalpha():
             self.ids['full_name'].text = 'Invalid input!'
@@ -40,7 +33,7 @@ class AddScreen(Screen):
         elif not invalid_reason.isdigit() or invalid_reason == '':
             self.ids['invalid_reason'].text = 'Invalid input!'
         else:
-            self.add(full_name, group, valid_reason, invalid_reason)
+            Controller.add(Controller, full_name, group, valid_reason, invalid_reason)
 
 
 class SearchScreen(Screen):
@@ -95,11 +88,12 @@ class DeleteScreen(Screen):
 
 
 class UploadScreen(Screen):
-    def upload_file(self,file_name):
-        if Controller.upload_file(Controller,file_name):
+    def upload_file(self, file_name):
+        if Controller.upload_file(Controller, file_name):
             self.manager.current = 'menu'
         else:
             self.ids['file'].text = 'No such file!'
+
 
 class TestApp(App):
     Window.clearcolor = (.81, .77, .87, 1)
