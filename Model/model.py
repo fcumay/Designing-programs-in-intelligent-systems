@@ -78,11 +78,13 @@ class Model:
         return list_of_index
 
     def find(self, list_of_index):
-        found_string = ''.join([f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] ({Model.information['totall'][index]}) \n"
-            for index in list_of_index])
+        found_string = ''.join([
+                                   f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] ({Model.information['totall'][index]}) \n"
+                                   for index in list_of_index])
         return (found_string)
-    def delete(self,list_of_index):
-        delete_string=''
+
+    def delete(self, list_of_index):
+        delete_string = ''
         for index in reversed(list_of_index):
             delete_string += f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] ({Model.information['totall'][index]}) \n"
             del Model.information['full_name'][index]

@@ -42,7 +42,7 @@ class SearchScreen(Screen):
 
 
 class DeleteScreen(Screen):
-    def delete(self,full_name, group, valid_reason, invalid_reason):
+    def delete(self, full_name, group, valid_reason, invalid_reason):
         self.ids['delete_label_id'].text = Controller.delete(Controller, full_name, group, valid_reason, invalid_reason)
 
 
