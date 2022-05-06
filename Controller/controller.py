@@ -21,13 +21,19 @@ class Controller:
         Model.add(Model, full_name, group, valid_reason, invalid_reason)
 
     def find(self, full_name, group, valid_reason, invalid_reason):
-        list_of_index = Model.searching(Model, full_name, group, valid_reason, invalid_reason)
-        return 'Matches have not been found!' if len(list_of_index) == 0 else Model.find(Model, list_of_index)
+        if (valid_reason.isdigit() or invalid_reason.isdigit()) or (valid_reason == '' and invalid_reason == ''):
+            list_of_index = Model.searching(Model, full_name, group, valid_reason, invalid_reason)
+            return 'Matches have not been found!' if len(list_of_index) == 0 else Model.find(Model, list_of_index)
+        else:
+            return 'Invalid input'
 
     def delete(self, full_name, group, valid_reason, invalid_reason):
-        list_of_index = Model.searching(Model, full_name, group, valid_reason, invalid_reason)
-        return 'Matches have not been found!' if len(list_of_index) == 0 else Model.delete(Model, list_of_index)
+        if (valid_reason.isdigit() or invalid_reason.isdigit()) or (valid_reason == '' and invalid_reason == ''):
+            list_of_index = Model.searching(Model, full_name, group, valid_reason, invalid_reason)
+            return 'Matches have not been found!' if len(list_of_index) == 0 else Model.delete(Model, list_of_index)
+        else:
+            return 'Invalid input'
 
-#некорректный ввод причин в find delete
-#addScreen to mvc
-#проблемы с перелистыванием базы
+# addScreen to mvc
+# проблемы с перелистыванием базы
+# сделац много файлов.xml
