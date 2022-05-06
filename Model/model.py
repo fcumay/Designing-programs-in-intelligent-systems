@@ -13,7 +13,7 @@ class Model:
         return os.path.exists(file_name)
 
     def upload_file(self, file_name):
-        file_name=f"file_xml/{file_name}"
+        file_name = f"file_xml/{file_name}"
         handler = read.Reader()
         handler.parser.setContentHandler(handler)
         handler.parser.parse(file_name)
@@ -54,8 +54,6 @@ class Model:
                 information += f"{i + 1}){Model.information['full_name'][i]} {Model.information['group'][i]} [{Model.information['valid_reason'][i]}, {Model.information['invalid_reason'][i]}] ({Model.information['totall'][i]}) \n"
         return information
 
-
-
     def add(self, full_name, group, valid_reason, invalid_reason):
         Model.information['full_name'].append(full_name)
         Model.information['group'].append(group)
@@ -81,8 +79,8 @@ class Model:
 
     def find(self, list_of_index):
         found_string = ''.join([
-                                   f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] ({Model.information['totall'][index]}) \n"
-                                   for index in list_of_index])
+            f"{Model.information['full_name'][index]} {Model.information['group'][index]} [{Model.information['valid_reason'][index]}, {Model.information['invalid_reason'][index]}] ({Model.information['totall'][index]}) \n"
+            for index in list_of_index])
         return (found_string)
 
     def delete(self, list_of_index):

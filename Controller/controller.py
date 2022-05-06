@@ -7,7 +7,7 @@ class Controller:
     def upload_file(self, file_name):
         if Model.file_name_validation(Model, f"file_xml/{file_name}"):
             Model.upload_file(Model, file_name)
-        return Model.file_name_validation(Model,f"file_xml/{file_name}")
+        return Model.file_name_validation(Model, f"file_xml/{file_name}")
 
     def save_file(self, file_name="new.xml"):
         Model.save_file(Model, file_name)
@@ -33,7 +33,3 @@ class Controller:
             return 'Matches have not been found!' if len(list_of_index) == 0 else Model.delete(Model, list_of_index)
         else:
             return 'Invalid input'
-
-# addScreen to mvc
-# проблемы с next_page()
-
