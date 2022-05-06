@@ -18,31 +18,8 @@ class MenuScreen(Screen):
 
 
 class BaseScreen(Screen):
-    curr_page = 0
-
-    def upd(self, navigation=0):
-        if navigation == -1:
-            self.curr_page -= 1
-        elif navigation == 1:
-            self.curr_page += 1
-        self.next_page()
-        Controller.save_file(self)
-
-    def next_page(self):
-        number_of_strings = 10
-        info = ''
-        start = self.curr_page * number_of_strings
-        for i in range(start, start + number_of_strings):
-            if len(Model.information['full_name']) <= i:
-                self.curr_page = -1
-                break
-            elif start < 0:
-                self.curr_page = math.floor(len(Model.information['full_name']) / number_of_strings)
-                print(self.curr_page)
-                break
-            else:
-                info += f"{i + 1}){Model.information['full_name'][i]} {Model.information['group'][i]} [{Model.information['valid_reason'][i]}, {Model.information['invalid_reason'][i]}] ({Model.information['totall'][i]}) \n"
-        self.ids['base_label_id'].text = info
+    def update(self,navigation=0):
+        self.ids['base_label_id'].text = Controller.update(Controller,navigation)
 
 
 class AddScreen(Screen):
@@ -111,6 +88,7 @@ class DeleteScreen(Screen):
                 del Model.information['group'][index]
                 del Model.information['valid_reason'][index]
                 del Model.information['invalid_reason'][index]
+                del Model.information['totall'][index]
 
     def upd(self):
         self.ids['delete_label_id'].text = self.deleted_string

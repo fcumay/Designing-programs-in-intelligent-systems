@@ -46,18 +46,18 @@ KV = """
             Button:
                 text: 'Update'
                 background_color: .78,.57,.87,.8
-                on_press: root.upd() 
+                on_press: root.update() 
         BoxLayout:
             size_hint: 1,.1
             orientation:'horizontal'   
             Button:
                 text: 'Previos'
                 background_color: .62,.48,.63,1
-                on_press: root.upd(-1)
+                on_press: root.update(-1)
             Button:
                 text: 'Next'
                 background_color: .62,.48,.63,1
-                on_press: root.upd(1)
+                on_press: root.update(1)
 
 
 
