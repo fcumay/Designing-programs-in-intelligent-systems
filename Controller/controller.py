@@ -5,9 +5,9 @@ from Model.model import Model
 class Controller:
 
     def upload_file(self, file_name):
-        if Model.file_name_validation(Model, file_name):
+        if Model.file_name_validation(Model, f"file_xml/{file_name}"):
             Model.upload_file(Model, file_name)
-        return Model.file_name_validation(Model, file_name)
+        return Model.file_name_validation(Model,f"file_xml/{file_name}")
 
     def save_file(self, file_name="new.xml"):
         Model.save_file(Model, file_name)
@@ -35,5 +35,5 @@ class Controller:
             return 'Invalid input'
 
 # addScreen to mvc
-# проблемы с перелистыванием базы
+# проблемы с next_page()
 # сделац много файлов.xml

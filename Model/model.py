@@ -13,6 +13,7 @@ class Model:
         return os.path.exists(file_name)
 
     def upload_file(self, file_name):
+        file_name=f"file_xml/{file_name}"
         handler = read.Reader()
         handler.parser.setContentHandler(handler)
         handler.parser.parse(file_name)
@@ -52,6 +53,8 @@ class Model:
             else:
                 information += f"{i + 1}){Model.information['full_name'][i]} {Model.information['group'][i]} [{Model.information['valid_reason'][i]}, {Model.information['invalid_reason'][i]}] ({Model.information['totall'][i]}) \n"
         return information
+
+
 
     def add(self, full_name, group, valid_reason, invalid_reason):
         Model.information['full_name'].append(full_name)
