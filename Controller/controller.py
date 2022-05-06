@@ -27,3 +27,7 @@ class Controller:
     def delete(self, full_name, group, valid_reason, invalid_reason):
         list_of_index = Model.searching(Model, full_name, group, valid_reason, invalid_reason)
         return 'Matches have not been found!' if len(list_of_index) == 0 else Model.delete(Model, list_of_index)
+
+#некорректный ввод причин в find delete
+#addScreen to mvc
+#проблемы с перелистыванием базы

@@ -51,7 +51,6 @@ class Model:
                 break
             else:
                 information += f"{i + 1}){Model.information['full_name'][i]} {Model.information['group'][i]} [{Model.information['valid_reason'][i]}, {Model.information['invalid_reason'][i]}] ({Model.information['totall'][i]}) \n"
-        print(information)
         return information
 
     def add(self, full_name, group, valid_reason, invalid_reason):
