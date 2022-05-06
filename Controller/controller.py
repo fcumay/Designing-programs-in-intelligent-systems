@@ -1,5 +1,4 @@
 import write
-
 from Model.model import Model
 
 
