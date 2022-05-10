@@ -20,6 +20,8 @@ class MenuScreen(Screen):
 class BaseScreen(Screen):
     def update(self, navigation=0):
         self.ids['base_label_id'].text = Controller.update(Controller, navigation)
+    def change_number_of_strings(self,number_of_strings):
+        Controller.change_number_of_strings(Model,number_of_strings)
 
 
 class AddScreen(Screen):

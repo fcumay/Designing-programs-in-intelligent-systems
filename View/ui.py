@@ -58,6 +58,14 @@ KV = """
                 text: 'Next'
                 background_color: .62,.48,.63,1
                 on_press: root.update(1)
+            Button:
+                text: 'Update'
+                background_color: .62,.48,.63,1
+                on_press: root.change_number_of_strings(number_of_strings.text)
+            TextInput:
+                id:number_of_strings
+                hint_text:'strings on page'          
+                
 
 
 
