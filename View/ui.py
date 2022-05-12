@@ -35,18 +35,87 @@ KV = """
             orientation:'horizontal'                   
             Button:
                 text: 'Menu'
+                size_hint: .2,1
                 background_color: .78,.57,.87,.8
                 on_press: 
                     root.manager.transition.direction = 'right'
-                    root.manager.current = 'menu'                
-            Label:
-                id:base_label_id
-                color: 0,0,0,1
-                size_hint: 8,1     
+                    root.manager.current = 'menu'     
+            GridLayout:
+                spacing:10
+                rows:2
+                cols:5
+                Label:
+                    text:'Full name'
+                    color: 0,0,0,1
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size 
+                Label:
+                    text:'Group'
+                    color: 0,0,0,1    
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size   
+                Label:
+                    text:'V/R'
+                    color: 0,0,0,1
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size  
+                Label:
+                    text:'Inv/R'
+                    color: 0,0,0,1
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size 
+                Label:
+                    text:'Total'
+                    color: 0,0,0,1 
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size
+                Label:
+                    id:full_name_base_id
+                    text:''
+                    color: 0,0,0,1 
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size    
+                Label:
+                    id:group_base_id
+                    text:''
+                    color: 0,0,0,1   
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size         
+                Label:
+                    id:valid_reason_base_id
+                    text:''
+                    color: 0,0,0,1
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size
+                Label:
+                    id:invalid_reason_base_id
+                    text:''
+                    color: 0,0,0,1 
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size 
+                Label:
+                    id:totall_base_id
+                    text:''
+                    color: 0,0,0,1  
+                    size_hint_x:None
+                    size_hint_y:None
+                    size: self.texture_size                                                                  
             Button:
                 text: 'Update'
+                size_hint: .2,1
                 background_color: .78,.57,.87,.8
                 on_press: root.update() 
+            
+            
         BoxLayout:
             size_hint: 1,.1
             orientation:'horizontal'   
@@ -66,9 +135,6 @@ KV = """
                 id:number_of_strings
                 hint_text:'strings on page'          
                 
-
-
-
 
 <AddScreen>:
     BoxLayout:                   

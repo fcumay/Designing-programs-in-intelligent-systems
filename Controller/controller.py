@@ -16,6 +16,7 @@ class Controller:
         information = Model.update(Model, navigation)
         self.save_file(self)
         return information
+
     def change_number_of_strings(self, number_of_strings):
         Model.change_number_of_strings(self,number_of_strings)
 

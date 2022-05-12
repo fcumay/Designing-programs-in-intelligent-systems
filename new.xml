@@ -1,303 +1,261 @@
 <?xml version="1.0" ?>
    <data>
        <students>
-           <student_full_name>Чернова Дарья Матвеевна</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>4</student_valid_reason>
-           <student_invalid_reason>10</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Сидорова София Егоровна</student_full_name>
-           <student_group>0271705</student_group>
+           <student_full_name>Копылова Дарья Михайловна</student_full_name>
+           <student_group>021706</student_group>
            <student_valid_reason>2</student_valid_reason>
            <student_invalid_reason>6</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Самсонов Андрей Романович</student_full_name>
-           <student_group>021707</student_group>
-           <student_valid_reason>0</student_valid_reason>
-           <student_invalid_reason>5</student_invalid_reason>
+           <student_full_name>Виноградова Амина Марковна</student_full_name>
+           <student_group>021706</student_group>
+           <student_valid_reason>4</student_valid_reason>
+           <student_invalid_reason>1</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Родионова Алёна Максимовна</student_full_name>
-           <student_group>021707</student_group>
-           <student_valid_reason>9</student_valid_reason>
-           <student_invalid_reason>4</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Сидорова Варвара Марковна</student_full_name>
+           <student_full_name>Львова Полина Даниловна</student_full_name>
            <student_group>0271705</student_group>
-           <student_valid_reason>2</student_valid_reason>
+           <student_valid_reason>4</student_valid_reason>
+           <student_invalid_reason>7</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Балашов Глеб Родионович</student_full_name>
+           <student_group>0271705</student_group>
+           <student_valid_reason>9</student_valid_reason>
+           <student_invalid_reason>7</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Павлова Алиса Богдановна</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>10</student_valid_reason>
+           <student_invalid_reason>1</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Демьянов Даниил Никитич</student_full_name>
+           <student_group>0271705</student_group>
+           <student_valid_reason>8</student_valid_reason>
+           <student_invalid_reason>6</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Ермолаев Иван Романович</student_full_name>
+           <student_group>021706</student_group>
+           <student_valid_reason>0</student_valid_reason>
            <student_invalid_reason>2</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Соколова Майя Данииловна</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>10</student_valid_reason>
-           <student_invalid_reason>5</student_invalid_reason>
+           <student_full_name>Маркова София Ярославовна</student_full_name>
+           <student_group>021706</student_group>
+           <student_valid_reason>1</student_valid_reason>
+           <student_invalid_reason>8</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Дмитриев Савелий Львович</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>9</student_valid_reason>
+           <student_full_name>Безрукова Анна Львовна</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>4</student_valid_reason>
            <student_invalid_reason>9</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Морозова София Яновна</student_full_name>
+           <student_full_name>Герасимов Тигран Кириллович</student_full_name>
            <student_group>0271705</student_group>
-           <student_valid_reason>5</student_valid_reason>
-           <student_invalid_reason>5</student_invalid_reason>
+           <student_valid_reason>6</student_valid_reason>
+           <student_invalid_reason>2</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Максимова Дарья Богдановна</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>1</student_valid_reason>
+           <student_full_name>Воробьева София Артуровна</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>5</student_valid_reason>
+           <student_invalid_reason>8</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Куликова Вера Арсентьевна</student_full_name>
+           <student_group>021706</student_group>
+           <student_valid_reason>9</student_valid_reason>
            <student_invalid_reason>10</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Назаров Григорий Георгиевич</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>0</student_valid_reason>
+           <student_full_name>Пугачев Даниил Ильич</student_full_name>
+           <student_group>0271705</student_group>
+           <student_valid_reason>8</student_valid_reason>
            <student_invalid_reason>3</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Макаров Богдан Александрович</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>5</student_valid_reason>
-           <student_invalid_reason>6</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Сазонова Марина Захаровна</student_full_name>
+           <student_full_name>Черепанова Алиса Дмитриевна</student_full_name>
            <student_group>021707</student_group>
-           <student_valid_reason>4</student_valid_reason>
-           <student_invalid_reason>6</student_invalid_reason>
+           <student_valid_reason>5</student_valid_reason>
+           <student_invalid_reason>9</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Сорокин Роман Николаевич</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>6</student_valid_reason>
-           <student_invalid_reason>0</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Исаев Марк Ильич</student_full_name>
+           <student_full_name>Поляков Тимофей Семёнович</student_full_name>
            <student_group>0271705</student_group>
-           <student_valid_reason>1</student_valid_reason>
+           <student_valid_reason>3</student_valid_reason>
+           <student_invalid_reason>7</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Глухова Алия Александровна</student_full_name>
+           <student_group>021706</student_group>
+           <student_valid_reason>2</student_valid_reason>
+           <student_invalid_reason>3</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Воронцова Ева Григорьевна</student_full_name>
+           <student_group>0271705</student_group>
+           <student_valid_reason>8</student_valid_reason>
            <student_invalid_reason>8</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Бочаров Иван Даниилович</student_full_name>
+           <student_full_name>Иванов Фёдор Фёдорович</student_full_name>
            <student_group>021706</student_group>
-           <student_valid_reason>10</student_valid_reason>
+           <student_valid_reason>1</student_valid_reason>
+           <student_invalid_reason>4</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Воронкова Алия Степановна</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>4</student_valid_reason>
            <student_invalid_reason>10</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Артемов Владимир Назарович</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>2</student_valid_reason>
-           <student_invalid_reason>5</student_invalid_reason>
+           <student_full_name>Тихомиров Тимофей Михайлович</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>8</student_valid_reason>
+           <student_invalid_reason>1</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Прохоров Максим Арсентьевич</student_full_name>
+           <student_full_name>Сазонов Дмитрий Захарович</student_full_name>
+           <student_group>021706</student_group>
+           <student_valid_reason>10</student_valid_reason>
+           <student_invalid_reason>4</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Белова Екатерина Александровна</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>9</student_valid_reason>
+           <student_invalid_reason>2</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Кудрявцев Александр Максимович</student_full_name>
+           <student_group>021706</student_group>
+           <student_valid_reason>3</student_valid_reason>
+           <student_invalid_reason>8</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Сергеев Матвей Максимович</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>5</student_valid_reason>
+           <student_invalid_reason>2</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Зорин Владислав Иванович</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>8</student_valid_reason>
+           <student_invalid_reason>0</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Волков Михаил Матвеевич</student_full_name>
+           <student_group>0271705</student_group>
+           <student_valid_reason>0</student_valid_reason>
+           <student_invalid_reason>4</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Лазарева Полина Романовна</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>5</student_valid_reason>
+           <student_invalid_reason>8</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Соловьева Василиса Матвеевна</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>4</student_valid_reason>
+           <student_invalid_reason>10</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Котова София Демидовна</student_full_name>
+           <student_group>021706</student_group>
+           <student_valid_reason>5</student_valid_reason>
+           <student_invalid_reason>2</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Сальникова Варвара Андреевна</student_full_name>
+           <student_group>0271705</student_group>
+           <student_valid_reason>8</student_valid_reason>
+           <student_invalid_reason>7</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Воронин Евгений Маркович</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>6</student_valid_reason>
+           <student_invalid_reason>7</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Петрова Анна Артёмовна</student_full_name>
            <student_group>0271705</student_group>
            <student_valid_reason>5</student_valid_reason>
            <student_invalid_reason>3</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Анисимов Дмитрий Николаевич</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>6</student_valid_reason>
-           <student_invalid_reason>5</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Бессонова Мирослава Андреевна</student_full_name>
-           <student_group>021707</student_group>
-           <student_valid_reason>4</student_valid_reason>
-           <student_invalid_reason>1</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Медведева Варвара Дмитриевна</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>10</student_valid_reason>
-           <student_invalid_reason>9</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Филатов Тимофей Максимович</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>1</student_valid_reason>
-           <student_invalid_reason>5</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Белов Дмитрий Владимирович</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>3</student_valid_reason>
-           <student_invalid_reason>7</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Колесников Дмитрий Андреевич</student_full_name>
+           <student_full_name>Белов Александр Михайлович</student_full_name>
            <student_group>0271705</student_group>
            <student_valid_reason>5</student_valid_reason>
-           <student_invalid_reason>8</student_invalid_reason>
+           <student_invalid_reason>2</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Терентьев Дмитрий Тихонович</student_full_name>
+           <student_full_name>Кузьмина София Фёдоровна</student_full_name>
            <student_group>021707</student_group>
-           <student_valid_reason>0</student_valid_reason>
-           <student_invalid_reason>1</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Блинов Семён Дмитриевич</student_full_name>
-           <student_group>021707</student_group>
-           <student_valid_reason>2</student_valid_reason>
-           <student_invalid_reason>0</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Орлова Алиса Вадимовна</student_full_name>
-           <student_group>021707</student_group>
-           <student_valid_reason>3</student_valid_reason>
-           <student_invalid_reason>8</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Сергеев Никита Романович</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>5</student_valid_reason>
+           <student_valid_reason>9</student_valid_reason>
            <student_invalid_reason>6</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Соколов Вадим Артёмович</student_full_name>
+           <student_full_name>Зубова Анна Никитична</student_full_name>
            <student_group>021706</student_group>
-           <student_valid_reason>10</student_valid_reason>
+           <student_valid_reason>1</student_valid_reason>
            <student_invalid_reason>1</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Семенов Константин Артёмович</student_full_name>
+           <student_full_name>Кудрявцева Полина Семёновна</student_full_name>
            <student_group>021707</student_group>
-           <student_valid_reason>9</student_valid_reason>
+           <student_valid_reason>0</student_valid_reason>
+           <student_invalid_reason>6</student_invalid_reason>
+       </students>
+       <students>
+           <student_full_name>Тимофеев Ярослав Даниэльевич</student_full_name>
+           <student_group>021707</student_group>
+           <student_valid_reason>6</student_valid_reason>
            <student_invalid_reason>4</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Горлов Глеб Иванович</student_full_name>
+           <student_full_name>Шульгин Роман Яковлевич</student_full_name>
            <student_group>021707</student_group>
-           <student_valid_reason>2</student_valid_reason>
-           <student_invalid_reason>8</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Панова Майя Львовна</student_full_name>
-           <student_group>0271705</student_group>
            <student_valid_reason>5</student_valid_reason>
-           <student_invalid_reason>1</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Блинова Диана Александровна</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>3</student_valid_reason>
-           <student_invalid_reason>10</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Сергеева Ульяна Александровна</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>5</student_valid_reason>
-           <student_invalid_reason>1</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Фокина Ева Сергеевна</student_full_name>
-           <student_group>021707</student_group>
-           <student_valid_reason>3</student_valid_reason>
-           <student_invalid_reason>1</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Соколова Алиса Дмитриевна</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>8</student_valid_reason>
-           <student_invalid_reason>2</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Павлова Стефания Андреевна</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>3</student_valid_reason>
            <student_invalid_reason>9</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Новиков Артём Иванович</student_full_name>
-           <student_group>021707</student_group>
-           <student_valid_reason>3</student_valid_reason>
-           <student_invalid_reason>10</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Морозова Дарья Артёмовна</student_full_name>
-           <student_group>021706</student_group>
+           <student_full_name>Смирнов Константин Эминович</student_full_name>
+           <student_group>0271705</student_group>
            <student_valid_reason>2</student_valid_reason>
-           <student_invalid_reason>7</student_invalid_reason>
+           <student_invalid_reason>4</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Волкова Виктория Григорьевна</student_full_name>
-           <student_group>021707</student_group>
-           <student_valid_reason>7</student_valid_reason>
-           <student_invalid_reason>1</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Соколов Фёдор Давидович</student_full_name>
+           <student_full_name>Агафонов Тимофей Львович</student_full_name>
            <student_group>021706</student_group>
-           <student_valid_reason>8</student_valid_reason>
-           <student_invalid_reason>9</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Захаров Ярослав Тимофеевич</student_full_name>
-           <student_group>021707</student_group>
-           <student_valid_reason>6</student_valid_reason>
+           <student_valid_reason>3</student_valid_reason>
            <student_invalid_reason>8</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Кудрявцев Степан Даниилович</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>1</student_valid_reason>
-           <student_invalid_reason>6</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Беляева Анна Марковна</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>0</student_valid_reason>
-           <student_invalid_reason>2</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Маркова Таисия Саввична</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>1</student_valid_reason>
-           <student_invalid_reason>2</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Куприянова Дарина Алексеевна</student_full_name>
+           <student_full_name>Русаков Давид Алексеевич</student_full_name>
            <student_group>021707</student_group>
            <student_valid_reason>5</student_valid_reason>
-           <student_invalid_reason>8</student_invalid_reason>
+           <student_invalid_reason>4</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Болдырева Анастасия Данииловна</student_full_name>
+           <student_full_name>Воробьева Мария Адриановна</student_full_name>
            <student_group>021707</student_group>
-           <student_valid_reason>10</student_valid_reason>
-           <student_invalid_reason>7</student_invalid_reason>
+           <student_valid_reason>3</student_valid_reason>
+           <student_invalid_reason>0</student_invalid_reason>
        </students>
        <students>
-           <student_full_name>Кузнецов Михаил Ярославович</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>6</student_valid_reason>
-           <student_invalid_reason>9</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Мещерякова Надежда Александровна</student_full_name>
-           <student_group>021706</student_group>
-           <student_valid_reason>2</student_valid_reason>
-           <student_invalid_reason>5</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Кузнецов Серафим Викторович</student_full_name>
-           <student_group>0271705</student_group>
-           <student_valid_reason>9</student_valid_reason>
-           <student_invalid_reason>2</student_invalid_reason>
-       </students>
-       <students>
-           <student_full_name>Калинина Анна Ильинична</student_full_name>
-           <student_group>021706</student_group>
+           <student_full_name>Климов Михаил Ибрагимович</student_full_name>
+           <student_group>021707</student_group>
            <student_valid_reason>4</student_valid_reason>
-           <student_invalid_reason>6</student_invalid_reason>
+           <student_invalid_reason>3</student_invalid_reason>
        </students>
    </data>

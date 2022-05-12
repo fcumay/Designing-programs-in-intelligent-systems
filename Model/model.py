@@ -43,7 +43,12 @@ class Model:
         self.number_of_strings=int(number_of_strings)
 
     def next_page(self):
-        information = ''
+        information = []
+        full_name=''
+        group=''
+        valid_reason=''
+        invalid_reason=''
+        totall=''
         start = self.curr_page * self.number_of_strings
         for i in range(start, start + self.number_of_strings):
             if len(Model.information['full_name']) <= i:
@@ -53,7 +58,16 @@ class Model:
                 self.curr_page = math.floor(len(Model.information['full_name']) / self.number_of_strings)
                 break
             else:
-                information += f"{i + 1}){Model.information['full_name'][i]} {Model.information['group'][i]} [{Model.information['valid_reason'][i]}, {Model.information['invalid_reason'][i]}] ({Model.information['totall'][i]}) \n"
+                full_name+=f"{i + 1}){Model.information['full_name'][i]}\n"
+                group+=f"| {Model.information['group'][i]} |\n"
+                valid_reason+=f"{Model.information['valid_reason'][i]}\n"
+                invalid_reason+=f"{Model.information['invalid_reason'][i]}\n"
+                totall+=f"{Model.information['totall'][i]}\n"
+        information.append(full_name)
+        information.append(group)
+        information.append(valid_reason)
+        information.append(invalid_reason)
+        information.append(totall)
         return information
 
     def add(self, full_name, group, valid_reason, invalid_reason):
