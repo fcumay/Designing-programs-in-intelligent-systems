@@ -64,7 +64,7 @@ def continue_game(x, train):
 def run():
     x = GameMap()
     train = Train(x)
-    flag = int(input('''
+    flag = int(input(''' 
 H   ┈╱▔▔▔▔▔▔▔▔╲┈┈┈┈
 E   ╱▔▔▔▔▔▔▔▔╲╱┈┈┈┈
 L   ▏MY TRAIN▕╱▔▔╲┈
