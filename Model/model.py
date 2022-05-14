@@ -40,7 +40,10 @@ class Model:
             self.curr_page += 1
         return self.next_page(self)
     def change_number_of_strings(self,number_of_strings):
-        self.number_of_strings=int(number_of_strings)
+        if number_of_strings.isdigit():
+            self.number_of_strings=int(number_of_strings)
+        else:
+            pass
 
     def next_page(self):
         information = []
@@ -51,11 +54,16 @@ class Model:
         totall=''
         start = self.curr_page * self.number_of_strings
         for i in range(start, start + self.number_of_strings):
+            if self.curr_page>=math.ceil(len(Model.information['full_name'])/self.number_of_strings):
+                self.curr_page = math.ceil(len(Model.information['full_name'])/self.number_of_strings)
+                break
+            if self.curr_page <=-1:
+                self.curr_page =-1
+                break
             if len(Model.information['full_name']) <= i:
-                self.curr_page = -1
                 break
             elif start < 0:
-                self.curr_page = math.floor(len(Model.information['full_name']) / self.number_of_strings)
+                self.curr_page = 1
                 break
             else:
                 full_name+=f"{i + 1}){Model.information['full_name'][i]}\n"
