@@ -10,7 +10,6 @@ def run():
     bg_color = (0, 0, 0)
     gun = Gun(screen)
 
-
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
