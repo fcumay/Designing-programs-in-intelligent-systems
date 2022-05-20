@@ -2,6 +2,7 @@ import pygame
 import sys
 from bullet import Bullet
 from ino import Ino
+import time
 
 
 def events(screen, gun, bullets):
@@ -36,19 +37,30 @@ def update(bg_color, screen, gun, inos, bullets):
     pygame.display.flip()
 
 
-def update_bullets(inos,bullets):
+def update_bullets(inos, bullets):
     '''update bullets position'''
     bullets.update()
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
-    collisions=pygame.sprite.groupcollide(bullets,inos,True,True)
+    collisions = pygame.sprite.groupcollide(bullets, inos, True, True)
 
-def update_inos(gun,inos):
+
+def gun_kill(stats, screen, gun, inos, bullets):
+    '''Crash gun by army'''
+    stats.guns_left -= 1
+    inos.empty()
+    bullets.empty()
+    create_army(screen, inos)
+    gun.create_gun()
+    time.sleep(2)
+
+
+def update_inos(stats,screen,gun,inos,bullets):
     '''update inos position'''
     inos.update()
-    if pygame.sprite.spritecollideany(gun,inos):
-        print('!!!!!!')
+    if pygame.sprite.spritecollideany(gun, inos):
+        gun_kill(stats,screen,gun,inos,bullets)
 
 
 def create_army(screen, inos):
@@ -59,7 +71,7 @@ def create_army(screen, inos):
     ino_height = ino.rect.height
     number_ino_y = int((750 - 100 - 2 * ino_height) / ino_height)
 
-    for row_number in range(number_ino_y-1):
+    for row_number in range(number_ino_y - 1):
         for ino_number in range(number_ino_x):
             ino = Ino(screen)
             ino.x = ino_width + (ino_width * ino_number)
