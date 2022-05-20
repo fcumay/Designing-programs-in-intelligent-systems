@@ -18,8 +18,8 @@ def run():
         controls.events(screen,gun,bullets)
         gun.update_gun()
         controls.update(bg_color,screen,gun,inos,bullets)
-        controls.update_bullets(bullets)
-        controls.update_inos(inos)
+        controls.update_bullets(inos,bullets)
+        controls.update_inos(gun,inos)
 
 
 run()
