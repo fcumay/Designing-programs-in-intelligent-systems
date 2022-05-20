@@ -53,7 +53,7 @@ def gun_kill(stats, screen, gun, inos, bullets):
     bullets.empty()
     create_army(screen, inos)
     gun.create_gun()
-    time.sleep(2)
+    time.sleep(1)
 
 
 def update_inos(stats,screen,gun,inos,bullets):
