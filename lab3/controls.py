@@ -112,5 +112,5 @@ def check_high_score(stats, sc):
         stats.high_score = stats.score
         sc.image_high_score()
         with open('high_score.txt', 'w') as f:
-            f.write(str(stats.high_score)+'\n')
+            f.write(str(stats.high_score) + '\n')
             f.write(str(stats.name))

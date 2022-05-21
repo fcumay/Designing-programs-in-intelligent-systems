@@ -3,11 +3,11 @@ from gun import Gun
 from pygame.sprite import Group
 from stats import Stats
 from scores import Scores
-    
+
 
 def run():
     pygame.init()
-    screen =pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     pygame.display.set_caption('Space Invaders')
     bg_color = (0, 0, 0)
     gun = Gun(screen)
