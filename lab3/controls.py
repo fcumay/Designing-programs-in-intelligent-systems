@@ -69,7 +69,7 @@ def gun_kill(stats, screen, sc, gun, inos, bullets):
         time.sleep(1)
     else:
         stats.run_game = False
-        sys.exit()
+        menu.run()
 
 
 def update_inos(stats, screen, sc, gun, inos, bullets):
@@ -112,4 +112,5 @@ def check_high_score(stats, sc):
         stats.high_score = stats.score
         sc.image_high_score()
         with open('high_score.txt', 'w') as f:
-            f.write(str(stats.high_score))
+            f.write(str(stats.high_score)+'\n')
+            f.write(str(stats.name))

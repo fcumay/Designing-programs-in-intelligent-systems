@@ -7,6 +7,7 @@ class Scores():
 
     def __init__(self, screen, stats):
         '''Init score'''
+        self.name=' '
         self.screen = screen
         self.screen_rect = screen.get_rect()
         self.stats = stats

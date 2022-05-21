@@ -2,6 +2,9 @@ import pygame
 import sys
 import Space_game
 import info
+import input
+import high_score
+
 
 def run():
     pygame.init()
@@ -33,15 +36,8 @@ def run():
                 if event.key == pygame.K_q:
                     sys.exit()
                 elif event.key == pygame.K_1:
-                    Space_game.run()
+                    input.run()
                 elif event.key == pygame.K_2:
-                    pass
+                    high_score.run()
                 elif event.key == pygame.K_3:
                     info.run()
-
-
-
-
-
-
-

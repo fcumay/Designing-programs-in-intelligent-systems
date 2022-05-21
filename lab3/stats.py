@@ -1,5 +1,6 @@
 class Stats():
     """statistics"""
+    name=''
 
     def __init__(self):
         """init statistic"""
