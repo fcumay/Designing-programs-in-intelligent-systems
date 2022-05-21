@@ -17,9 +17,9 @@ class Ino(pygame.sprite.Sprite):
 
     def draw(self):
         '''Output ino on the screen'''
-        self.screen.blit(self.image,self.rect)
+        self.screen.blit(self.image, self.rect)
 
     def update(self):
         '''move inos'''
-        self.y+=0.1
-        self.rect.y=self.y
+        self.y += 0.1
+        self.rect.y = self.y
