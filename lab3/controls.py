@@ -92,18 +92,19 @@ def inos_check(stats, screen, sc, gun, inos, bullets):
 def create_army(screen, inos):
     '''create army of inos'''
     ino = Ino(screen)
-    ino_width = ino.rect.width
+    ino_width = ino.rect.width+40
     number_ino_x = int((1550 - 2 * ino_width) / ino_width)
-    ino_height = ino.rect.height
-    number_ino_y = int((750 - 100 - 2 * ino_height) / ino_height)
+    ino_height = ino.rect.height+40
+    #number_ino_y = int((750 - 100 - 2 * ino_height) / ino_height)
+    number_ino_y=3
 
     for row_number in range(number_ino_y - 1):
         for ino_number in range(number_ino_x):
             ino = Ino(screen)
             ino.x = ino_width + (ino_width * ino_number)
             ino.y = ino_height + (ino_height * row_number)
-            ino.rect.x = ino.x
-            ino.rect.y = ino.rect.height + ino.rect.height * row_number
+            ino.rect.x=ino.x
+            ino.rect.y = ino.rect.height + ino.rect.height * row_number +ino_number*10
             inos.add(ino)
 
 
