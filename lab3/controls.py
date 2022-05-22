@@ -2,6 +2,8 @@ import pygame
 import sys
 from bullet import Bullet
 from ino import Ino
+from ino import Ino2
+from ino import Ino3
 import time
 import menu
 
@@ -100,9 +102,29 @@ def create_army(screen, inos):
 
     for row_number in range(number_ino_y - 1):
         for ino_number in range(number_ino_x):
-            ino = Ino(screen)
+            ino = Ino2(screen)
             ino.x = ino_width + (ino_width * ino_number)
             ino.y = ino_height + (ino_height * row_number)
+            ino.rect.x=ino.x
+            ino.rect.y = ino.rect.height + ino.rect.height * row_number +ino_number*10
+            inos.add(ino)
+
+    for row_number in range(number_ino_y - 2):
+        for ino_number in range(number_ino_x):
+            ino = Ino3(screen)
+            ino.x = ino_width + (ino_width * ino_number)
+            ino.y = 75+ino_height + (ino_height * row_number)
+            ino.rect.x=ino.x
+            ino.rect.y = ino.rect.height + ino.rect.height * row_number +ino_number*10
+            inos.add(ino)
+
+
+
+    for row_number in range(number_ino_y - 1):
+        for ino_number in range(number_ino_x):
+            ino = Ino(screen)
+            ino.x = ino_width + (ino_width * ino_number)
+            ino.y = 300+ino_height + (ino_height * row_number)
             ino.rect.x=ino.x
             ino.rect.y = ino.rect.height + ino.rect.height * row_number +ino_number*10
             inos.add(ino)
