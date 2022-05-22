@@ -16,6 +16,9 @@ def run():
     controls.create_army(screen, inos)
     stats = Stats()
     sc = Scores(screen, stats)
+    music = pygame.mixer.Sound('audio/music.wav')
+    music.set_volume(0.2)
+    music.play(loops=-1)
 
     while True:
         controls.events(screen, gun, bullets)

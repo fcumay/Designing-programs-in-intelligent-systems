@@ -1,6 +1,7 @@
 class Stats():
     """statistics"""
     name=''
+    new_level = 1
 
     def __init__(self):
         """init statistic"""

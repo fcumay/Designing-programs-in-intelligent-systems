@@ -4,8 +4,10 @@ from bullet import Bullet
 from ino import Ino
 from ino import Ino2
 from ino import Ino3
+from ino import SuperIno
 import time
 import menu
+from stats import Stats
 
 
 def events(screen, gun, bullets):
@@ -20,8 +22,12 @@ def events(screen, gun, bullets):
             elif event.key == pygame.K_a:
                 gun.mleft = True
             elif event.key == pygame.K_SPACE:
+                laser_sound = pygame.mixer.Sound('audio/laser.wav')
+                laser_sound.set_volume(0.5)
+                laser_sound.play()
                 new_bullet = Bullet(screen, gun)
                 bullets.add(new_bullet)
+
         elif event.type == pygame.KEYUP:
             # right
             if event.key == pygame.K_d:
@@ -55,8 +61,13 @@ def update_bullets(screen, stats, sc, inos, bullets):
         check_high_score(stats, sc)
         sc.image_guns()
     if len(inos) == 0:
-        bullets.empty()
-        create_army(screen, inos)
+        if Stats.new_level<3:
+            bullets.empty()
+            create_army(screen, inos)
+            Stats.new_level+=1
+        else:
+            stats.run_game = False
+            menu.run()
 
 
 def gun_kill(stats, screen, sc, gun, inos, bullets):
@@ -97,7 +108,6 @@ def create_army(screen, inos):
     ino_width = ino.rect.width+40
     number_ino_x = int((1550 - 2 * ino_width) / ino_width)
     ino_height = ino.rect.height+40
-    #number_ino_y = int((750 - 100 - 2 * ino_height) / ino_height)
     number_ino_y=3
 
     for row_number in range(number_ino_y - 1):
@@ -106,6 +116,12 @@ def create_army(screen, inos):
             ino.x = ino_width + (ino_width * ino_number)
             ino.y = ino_height + (ino_height * row_number)
             ino.rect.x=ino.x
+            ino.rect.y = ino.rect.height + ino.rect.height * row_number +ino_number*10
+            inos.add(ino)
+
+            ino = Ino(screen)
+            ino.rect.x = ino_width + (ino_width * ino_number)
+            ino.y = 300+ino_height + (ino_height * row_number)
             ino.rect.y = ino.rect.height + ino.rect.height * row_number +ino_number*10
             inos.add(ino)
 
@@ -118,16 +134,16 @@ def create_army(screen, inos):
             ino.rect.y = ino.rect.height + ino.rect.height * row_number +ino_number*10
             inos.add(ino)
 
+    ino=SuperIno(screen)
+    ino.x = 50
+    ino.y = 50
+    ino.rect.x = ino.x
+    ino.rect.y = ino.y
+    inos.add(ino)
 
 
-    for row_number in range(number_ino_y - 1):
-        for ino_number in range(number_ino_x):
-            ino = Ino(screen)
-            ino.x = ino_width + (ino_width * ino_number)
-            ino.y = 300+ino_height + (ino_height * row_number)
-            ino.rect.x=ino.x
-            ino.rect.y = ino.rect.height + ino.rect.height * row_number +ino_number*10
-            inos.add(ino)
+
+
 
 
 def check_high_score(stats, sc):
