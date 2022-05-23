@@ -25,7 +25,8 @@ def events(screen, gun, bullets):
                 laser_sound = pygame.mixer.Sound('audio/laser.wav')
                 laser_sound.set_volume(0.5)
                 laser_sound.play()
-                new_bullet = Bullet(screen, gun)
+                index=Stats.new_level-1
+                new_bullet = Bullet(screen, gun,index)
                 bullets.add(new_bullet)
 
         elif event.type == pygame.KEYUP:
@@ -61,7 +62,7 @@ def update_bullets(screen, stats, sc, inos, bullets):
         check_high_score(stats, sc)
         sc.image_guns()
     if len(inos) == 0:
-        if Stats.new_level<3:
+        if Stats.new_level<5:
             bullets.empty()
             create_army(screen, inos)
             Stats.new_level+=1

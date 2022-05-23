@@ -14,7 +14,9 @@ def run():
     screen.fill(bg_color)
     image = pygame.image.load('images/logo.png')
     logo_rect = image.get_rect()
+    sign = pygame.image.load('images/sign.png')
     screen.blit(image, logo_rect)
+    screen.blit(sign, (175,650))
 
     f1 = pygame.font.SysFont('monospace', 42)
     text0 = f1.render('PRESS:', 1, (255, 255, 0))
