@@ -1,12 +1,12 @@
 import pygame
 import sys
-import Space_game
 import info
 import input
 import high_score
 
 
 def run():
+    """Main menu window"""
     pygame.init()
     screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     pygame.display.set_caption('Space Invaders')
@@ -16,7 +16,7 @@ def run():
     logo_rect = image.get_rect()
     sign = pygame.image.load('images/sign.png')
     screen.blit(image, logo_rect)
-    screen.blit(sign, (175,650))
+    screen.blit(sign, (175, 650))
 
     f1 = pygame.font.SysFont('monospace', 42)
     text0 = f1.render('PRESS:', 1, (255, 255, 0))
@@ -32,6 +32,8 @@ def run():
     screen.blit(text4, (990, 530))
 
     pygame.display.flip()
+
+    # choose and change screen
     while True:
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:

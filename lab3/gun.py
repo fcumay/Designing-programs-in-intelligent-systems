@@ -5,7 +5,7 @@ from pygame.sprite import Sprite
 class Gun(Sprite):
 
     def __init__(self, screen):
-        '''Initialize gun'''
+        """Initialize gun"""
         super(Gun, self).__init__()
         self.screen = screen
         self.image = pygame.image.load('images/gun.png')
@@ -18,18 +18,17 @@ class Gun(Sprite):
         self.mleft = False
 
     def output(self):
-        '''Draw gun'''
+        """Draw gun"""
         self.screen.blit(self.image, self.rect)
 
     def update_gun(self):
-        """update gun position"""
+        """Update gun position"""
         if self.mright and self.rect.right < self.screen_rect.right:
             self.center += 1.5
         if self.mleft and self.rect.left > 0:
             self.center -= 1.5
-
         self.rect.centerx = self.center
 
     def create_gun(self):
-        '''Create gun again'''
+        """Create gun again"""
         self.center = self.screen_rect.centerx

@@ -2,10 +2,9 @@ import pygame
 
 
 class Ino(pygame.sprite.Sprite):
-    '''One ino'''
+    """First type of ino"""
 
     def __init__(self, screen):
-        '''init and start position'''
         super(Ino, self).__init__()
         self.screen = screen
         self.image = pygame.image.load('images/ino.png')
@@ -18,7 +17,7 @@ class Ino(pygame.sprite.Sprite):
         self.move = 0
 
     def update(self):
-        '''move inos'''
+        """Ino move"""
         if self.move == 0:
             self.image = pygame.image.load('images/ino.png')
             self.move = 1
@@ -30,9 +29,10 @@ class Ino(pygame.sprite.Sprite):
 
 
 class Ino2(Ino, pygame.sprite.Sprite):
+    """Second type of ino"""
 
     def update(self):
-        '''move inos'''
+        """Ino move"""
         if self.move == 0:
             self.image = pygame.image.load('images/ino2.1.png')
             self.move = 1
@@ -44,6 +44,8 @@ class Ino2(Ino, pygame.sprite.Sprite):
 
 
 class Ino3(Ino, pygame.sprite.Sprite):
+    """Third type of ino"""
+
     def __init__(self, screen):
         '''init and start position'''
         super(Ino, self).__init__()
@@ -53,7 +55,7 @@ class Ino3(Ino, pygame.sprite.Sprite):
         self.move = 0
 
     def update(self):
-        '''move inos'''
+        """Ino move"""
         if self.move == 0:
             self.image = pygame.image.load('images/ino3.1.png')
             self.move = 1
@@ -62,14 +64,16 @@ class Ino3(Ino, pygame.sprite.Sprite):
             self.move = 0
         self.y += 0.1
         self.rect.y = self.y
-        
+
+
 class SuperIno(Ino, pygame.sprite.Sprite):
+    """Type:Superino"""
 
     def update(self):
-        '''move inos'''
+        """Ino move"""
         self.image = pygame.image.load('images/superino.png')
-        if self.x<750:
+        if self.x < 750:
             self.x += 0.8
-            self.rect.x= self.x
+            self.rect.x = self.x
         else:
             self.image = pygame.image.load('images/star.png')

@@ -1,10 +1,10 @@
 import pygame
-import sys
 import Space_game
-from stats import Stats
+import stats
 
 
 def run():
+    """Screen, where user can input his name. User can also pass this step."""
     pygame.init()
     screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     font = pygame.font.Font(None, 32)
@@ -14,12 +14,14 @@ def run():
     while True:
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
+                # save and continue
                 if event.key == pygame.K_RETURN:
-                    Stats.name = text
-                    text = ''
-                    Space_game.run()
+                    stats.name = text
+                    Space_game.run(text)
+                # del char
                 elif event.key == pygame.K_BACKSPACE:
                     text = text[:-1]
+                # add char
                 else:
                     text += event.unicode
         screen.fill((0, 0, 0))
