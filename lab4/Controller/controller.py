@@ -18,8 +18,15 @@ class Controller:
         return station
 
     def next_station(self,station):
-        self.model.train.go_to_station(station)
-        self.spawn()
+        if self.check_follow_station(station):
+            self.model.train.go_to_station(station)
+            self.spawn()
+            return True
+        else:
+            return False
+
+    def check_follow_station(self,station):
+        return True if station.lower() in self.model.train.show_stations() else False
 
     def spawn(self):
         self.model.x.spawn()
