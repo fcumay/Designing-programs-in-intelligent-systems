@@ -1,6 +1,7 @@
 import math
 import os.path
 from Controller.controller import Controller
+import time
 
 from kivy.config import Config
 
@@ -42,6 +43,17 @@ class MainPage(Screen):
         self.ids['st_D_goods'].text = f'Station D:  {self.controller.update()[3]}'
         self.ids['st_E_goods'].text = f'Station E:  {self.controller.update()[4]}'
         self.ids['st_F_goods'].text = f'Station F:  {self.controller.update()[5]}'
+        if not(self.controller.check_overload()):
+            self.ids['train_goods'].text='Oh,no!  :c'
+            self.ids['st_A_goods'].text = 'WASTED'
+            self.ids['st_B_goods'].text = 'Will you try again?'
+            self.ids['st_C_goods'].text = 'Now your score is '
+            self.ids['st_D_goods'].text = self.controller.wasted()
+            self.ids['st_E_goods'].text = ''
+            self.ids['st_F_goods'].text = ''
+            self.ids['txt'].text='WASTED'
+
+
 
     def next_station(self, station):
         if station != '':

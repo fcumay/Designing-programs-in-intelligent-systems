@@ -44,12 +44,12 @@ class Model:
 
         print('ПОТРАЧЕНО')
 
-    def save(self, x, train, time):
+    def save(self):
         with open("rec.txt", 'w+') as f:
-            for station in x.stations:
+            for station in self.x.stations:
                 f.write(str(station.capacity) + '\n')
-            f.write(str(train.capacity) + '\n')
-            f.write(str(time))
+            f.write(str(self.train.capacity) + '\n')
+            f.write(str(self.wasted()))
 
     def continue_game(self):
         data = []
@@ -70,8 +70,13 @@ class Model:
         else:
             my_time = 0
         self.first_time = time.time() - my_time
+
+    def check_overload(self):
+        return self.x.check_overloading(self.train)
+
+    def wasted(self):
         final_time = time.time() - self.first_time
-        print('Ваш счёт:', round(final_time, 1))
+        return round(final_time, 1)
 
 
 class GameMap:
@@ -129,7 +134,7 @@ class Train:
         for i in range(len(stations)):
             if str(key).lower() == stations[i]:
                 key = i
-                
+
 
         self.__curr_station = self.__game_map.graph[self.__curr_station][key]
         self.show_stations()

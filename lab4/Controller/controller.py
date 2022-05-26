@@ -30,6 +30,7 @@ class Controller:
 
     def spawn(self):
         self.model.x.spawn()
+        self.save()
 
     def load(self, num):
         if self.check_load(num):
@@ -44,6 +45,7 @@ class Controller:
     def unload(self, num):
         if self.check_unload(num):
             self.model.train.unloading(int(num))
+
             return True
         else:
             return False
@@ -51,3 +53,11 @@ class Controller:
     def check_unload(self, num):
         return False if not (num.isdigit()) or int(num) > self.model.train.capacity else True
 
+    def check_overload(self):
+        return True if self.model.check_overload() else False
+
+    def wasted(self):
+        return str(self.model.wasted())
+
+    def save(self):
+        self.model.save()
