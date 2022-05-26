@@ -1,15 +1,16 @@
 import pygame
 import Space_game
 import stats
+import constants.settings as settings
 
 
 def run():
     """Screen, where user can input his name. User can also pass this step."""
     pygame.init()
     screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-    font = pygame.font.Font(None, 32)
+    font = pygame.font.Font(None, settings.INPUT_SIZE)
     input_box = pygame.Rect(100, 100, 140, 32)
-    color = (0, 0, 255)
+    color = settings.BLUE
     text = 'NamePlayer'
     while True:
         for event in pygame.event.get():
@@ -24,7 +25,7 @@ def run():
                 # add char
                 else:
                     text += event.unicode
-        screen.fill((0, 0, 0))
+        screen.fill(settings.BLACK)
         txt_surface = font.render(text, True, color)
         width = max(200, txt_surface.get_width() + 10)
         input_box.w = width

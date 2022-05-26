@@ -1,11 +1,14 @@
+import constants.settings as settings
+
+
 class Stats():
 
-    def __init__(self,name):
+    def __init__(self, name):
         """Init statistic"""
-        self.name=name
+        self.name = name
         self.reset_stats()
         self.run_game = True
-        with open('high_score.txt', 'r') as f:
+        with open(settings.HIGH_SCORE, 'r') as f:
             self.high_score = int(f.readline())
 
     def reset_stats(self):

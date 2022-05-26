@@ -8,6 +8,7 @@ from ino import SuperIno
 import time
 import menu
 from stats import Stats
+import constants.settings as settings
 
 
 def events(screen, gun, bullets,stats):
@@ -25,8 +26,8 @@ def events(screen, gun, bullets,stats):
                 gun.mleft = True
             # shoot
             elif event.key == pygame.K_SPACE:
-                laser_sound = pygame.mixer.Sound('audio/laser.wav')
-                laser_sound.set_volume(0.5)
+                laser_sound = pygame.mixer.Sound(settings.SHOOT_SOUND)
+                laser_sound.set_volume(settings.SHOOT_SOUND_VAL)
                 laser_sound.play()
                 index = stats.new_level - 1
                 new_bullet = Bullet(screen, gun, index)
@@ -62,7 +63,7 @@ def update_bullets(screen, stats, sc, inos, bullets):
     collisions = pygame.sprite.groupcollide(bullets, inos, True, True)
     if collisions:
         for inos in collisions.values():
-            stats.score += 10 * len(inos)
+            stats.score += settings.INOS_POINT * len(inos)
         sc.image_score()
         check_high_score(stats, sc)
         sc.image_guns()
