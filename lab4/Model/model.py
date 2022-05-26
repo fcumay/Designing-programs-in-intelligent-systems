@@ -125,13 +125,6 @@ class GameMap:
     def stations(self, x):
         self.__stations = x
 
-    def show_condition(self):
-        for station in self.__stations:
-            print(f'На станции [{str(station.name)}] -- {str(station.capacity)} товаров')
-
-    def __str__(self):
-        for station in self.__stations:
-            print(f'На станции [{str(station.name)}] -- {str(station.capacity)} товаров')
 
 class Train:
     def __init__(self, game_map, size=25, capacity=0):
@@ -157,9 +150,6 @@ class Train:
         self.__curr_station.capacity += num
 
 
-    def show_stations(self):
-        for station in self.__game_map.graph[self.__curr_station]:
-            print(station.name, end=' ')
 
     @property
     def follow_stations(self):
