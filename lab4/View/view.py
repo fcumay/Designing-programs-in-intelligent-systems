@@ -48,6 +48,9 @@ class MainPage(Screen):
     def load(self,num):
         self.controller.load(int(num))
         self.update()
+    def unload(self,num):
+        self.controller.unload(int(num))
+        self.update()
 
 
 

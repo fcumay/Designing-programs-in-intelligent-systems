@@ -81,6 +81,7 @@ KV = """
                 Button:
                     text:'Unload train'
                     background_color: .45, .76, .76, .5
+                    on_press:root.unload(txt.text)
             
         Label:
             text:''

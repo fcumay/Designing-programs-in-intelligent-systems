@@ -27,3 +27,6 @@ class Controller:
     def load(self,num):
         self.model.train.loading(num)
 
+    def unload(self,num):
+        self.model.train.unloading(num)
+

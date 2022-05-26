@@ -152,16 +152,9 @@ class Train:
             self.__capacity = self.__size
             self.__curr_station.capacity += -buf + kolvo
 
-    def unloading(self):
-        print('На станции:', self.__curr_station.capacity)
-        print('В поезде:', self.capacity)
-        kolvo = int(input('Сколько выгрузить '))
-        while kolvo < 0 or self.__capacity - kolvo < 0:
-            print('На станции:', self.__curr_station.capacity)
-            print('в поезде сейчас столько груза:', self.capacity)
-            kolvo = int(input('В поезде: '))
-        self.__capacity -= kolvo
-        self.__curr_station.capacity += kolvo
+    def unloading(self,num):
+        self.__capacity -= num
+        self.__curr_station.capacity += num
 
 
     def show_stations(self):
