@@ -43,37 +43,35 @@ class MainPage(Screen):
         self.ids['st_D_goods'].text = f'Station D:  {self.controller.update()[3]}'
         self.ids['st_E_goods'].text = f'Station E:  {self.controller.update()[4]}'
         self.ids['st_F_goods'].text = f'Station F:  {self.controller.update()[5]}'
-        if not(self.controller.check_overload()):
-            self.ids['train_goods'].text='Oh,no!  :c'
+        if not (self.controller.check_overload()):
+            self.ids['train_goods'].text = 'Oh,no!  :c'
             self.ids['st_A_goods'].text = 'WASTED'
             self.ids['st_B_goods'].text = 'Will you try again?'
             self.ids['st_C_goods'].text = 'Now your score is '
             self.ids['st_D_goods'].text = self.controller.wasted()
             self.ids['st_E_goods'].text = ''
             self.ids['st_F_goods'].text = ''
-            self.ids['txt'].text='WASTED'
-
-
+            self.ids['txt'].text = 'WASTED'
 
     def next_station(self, station):
         if station != '':
-            flag=self.controller.next_station(station)
+            flag = self.controller.next_station(station)
             if not flag:
-                self.ids['txt'].text='Input valid name of station.'
+                self.ids['txt'].text = 'Input valid name of station.'
         self.update()
 
     def load(self, num):
         if num != '':
-            flag=self.controller.load(num)
+            flag = self.controller.load(num)
             if not flag:
-                self.ids['txt'].text='Input valid number of goods.'
+                self.ids['txt'].text = 'Input valid number of goods.'
         self.update()
 
     def unload(self, num):
         if num != '':
-            flag=self.controller.unload(num)
+            flag = self.controller.unload(num)
             if not flag:
-                self.ids['txt'].text='Input valid number of goods.'
+                self.ids['txt'].text = 'Input valid number of goods.'
         self.update()
 
 

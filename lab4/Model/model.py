@@ -11,39 +11,6 @@ class Model:
         self.flag = 0
         self.first_time = 0
 
-    def menu(self):
-        while x.check_overloading(train):
-
-            x.spawn()
-            print(f'Поезд на {train.curr_station.name} станции              В поезде {train.capacity}')
-            x.show_condition()
-            print('Что сделать?')
-            key = input('(1) Следующая станция\n(2) Загрузить поезд\n(3) Разгрузить поезд\n')
-            if key == '1':
-                train.show_stations()
-                stations_state = int(input('\nКуда поедем?\n'))
-                while (stations_state >= train.follow_stations):
-                    stations_state = int(input('\nХорошо подyмайте\n'))
-                train.go_to_station(stations_state)
-                print('...едем...')
-                time.sleep(2)
-                continue
-            elif key == '2':
-                train.loading()
-                print('загружаю...')
-                time.sleep(3)
-            elif key == '3':
-                train.unloading()
-                print('разгружаю...')
-                time.sleep(3)
-            elif key == 'p':
-                print('Игра сохранена')
-                save(x, train, time.time() - first_time)
-                exit()
-            x.check_overloading(train)
-
-        print('ПОТРАЧЕНО')
-
     def save(self):
         with open("rec.txt", 'w+') as f:
             for station in self.x.stations:
@@ -134,7 +101,6 @@ class Train:
         for i in range(len(stations)):
             if str(key).lower() == stations[i]:
                 key = i
-
 
         self.__curr_station = self.__game_map.graph[self.__curr_station][key]
         self.show_stations()
