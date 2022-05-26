@@ -2,13 +2,15 @@ import random
 import time
 from os import system
 
+
 class Model:
 
     def __init__(self):
         self.x = GameMap()
         self.train = Train(self.x)
-        self.flag=0
-        self.first_time=0
+        self.flag = 0
+        self.first_time = 0
+
     def menu(self):
         while x.check_overloading(train):
 
@@ -36,51 +38,40 @@ class Model:
                 time.sleep(3)
             elif key == 'p':
                 print('Игра сохранена')
-                save(x,train,time.time()-first_time)
+                save(x, train, time.time() - first_time)
                 exit()
             x.check_overloading(train)
 
-
         print('ПОТРАЧЕНО')
 
-
-    def save(self,x, train,time):
+    def save(self, x, train, time):
         with open("rec.txt", 'w+') as f:
             for station in x.stations:
                 f.write(str(station.capacity) + '\n')
-            f.write(str(train.capacity)+'\n')
+            f.write(str(train.capacity) + '\n')
             f.write(str(time))
 
     def continue_game(self):
-        data=[]
+        data = []
         with open("rec.txt", 'r+') as f:
             for line in f:
                 data.append(float(line))
         for line in range(len(self.x.stations)):
-            self.x.stations[line].capacity=data[line]
-        self.train.capacity=data[len(self.x.stations)]
-        return data[len(self.x.stations)+1]
+            self.x.stations[line].capacity = data[line]
+        self.train.capacity = data[len(self.x.stations)]
+        print(self.train.follow_stations)
+        return data[len(self.x.stations) + 1]
 
-
-
-    def update_station(self):
-        capacity=[station.capacity for station in self.x.stations]
-        return capacity
-            
-            
-
-    def run(self,flag):
-        self.flag=flag
+    def run(self, flag):
+        self.flag = flag
         if self.flag == 2:
-            my_time=self.continue_game()
+            my_time = self.continue_game()
 
         else:
-            my_time=0
-        self.first_time = time.time()-my_time
+            my_time = 0
+        self.first_time = time.time() - my_time
         final_time = time.time() - self.first_time
-        print('Ваш счёт:' ,round(final_time,1))
-
-
+        print('Ваш счёт:', round(final_time, 1))
 
 
 class GameMap:
@@ -108,7 +99,6 @@ class GameMap:
                 return False
         return True
 
-
     @property
     def graph(self):
         return self.__graph
@@ -134,22 +124,32 @@ class Train:
         self.__capacity = capacity
 
     def go_to_station(self, key):
-        self.__curr_station = self.__game_map.graph[self.__curr_station][key]
+        stations = self.show_stations()
 
-    def loading(self,num):
+        for i in range(len(stations)):
+            if str(key).lower() == stations[i]:
+                key = i
+                
+
+        self.__curr_station = self.__game_map.graph[self.__curr_station][key]
+        self.show_stations()
+
+    def loading(self, num):
         if self.__capacity + num <= self.__size:
             self.__capacity += num
             self.__curr_station.capacity -= num
         else:
             buf = self.__size - self.__capacity
             self.__capacity = self.__size
-            self.__curr_station.capacity += -buf + kolvo
+            self.__curr_station.capacity += -buf + num
 
-    def unloading(self,num):
+    def unloading(self, num):
         self.__capacity -= num
         self.__curr_station.capacity += num
 
-
+    def show_stations(self):
+        next_station = [station.name for station in self.__game_map.graph[self.__curr_station]]
+        return next_station
 
     @property
     def follow_stations(self):
@@ -168,8 +168,9 @@ class Train:
         self.__capacity = capacity
 
     @curr_station.setter
-    def curr_station(self,station):
-        self.__curr_station=station
+    def curr_station(self, station):
+        self.__curr_station = station
+
 
 class Station:
     def __init__(self, name, capacity=5, size=25):

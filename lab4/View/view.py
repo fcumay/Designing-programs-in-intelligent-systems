@@ -45,7 +45,7 @@ class MainPage(Screen):
 
     def next_station(self, station):
         if station != '':
-            self.controller.next_station(int(station))
+            self.controller.next_station(station)
         self.update()
 
     def load(self, num):
