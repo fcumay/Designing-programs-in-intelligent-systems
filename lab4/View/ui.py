@@ -69,7 +69,7 @@ KV = """
                 spacing:10
                 TextInput:
                     id:txt
-                    hint_text:'Input number'
+                    hint_text:'Input box'
                 Button:
                     text:'Next station'
                     background_color: .45, .76, .76, .5

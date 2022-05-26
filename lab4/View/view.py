@@ -47,12 +47,14 @@ class MainPage(Screen):
         if station != '':
             flag=self.controller.next_station(station)
             if not flag:
-                self.ids['txt'].text='Input valid name of station'
+                self.ids['txt'].text='Input valid name of station.'
         self.update()
 
     def load(self, num):
         if num != '':
-            self.controller.load(int(num))
+            flag=self.controller.load(num)
+            if not flag:
+                self.ids['txt'].text='Input valid number of goods.'
         self.update()
 
     def unload(self, num):
