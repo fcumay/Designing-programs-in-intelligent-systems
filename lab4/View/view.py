@@ -34,9 +34,6 @@ class MainPage(Screen):
         super(MainPage, self).__init__(name='main')
         self.controller = controller
 
-    def curr_station(self):
-        pass
-
     def update(self):
         self.ids['train_goods'].text = f'={self.controller.update()[-1]}= Train: :  {self.controller.update()[-2]}'
         self.ids['st_A_goods'].text = f'Station A:  {self.controller.update()[0]}'
