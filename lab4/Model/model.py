@@ -73,6 +73,7 @@ class Model:
         self.flag=flag
         if self.flag == 2:
             my_time=self.continue_game()
+
         else:
             my_time=0
         self.first_time = time.time()-my_time
@@ -142,17 +143,10 @@ class Train:
     def go_to_station(self, key):
         self.__curr_station = self.__game_map.graph[self.__curr_station][key]
 
-    def loading(self):
-        print('На станции:', self.__curr_station.capacity)
-        print('В поезде:', self.capacity)
-        kolvo = int(input('Сколько загрузить: '))
-        while kolvo < 0 or self.__curr_station.capacity - kolvo < 0:
-            print('На станции:', self.__curr_station.capacity)
-            print('В поезде', self.capacity)
-            kolvo = int(input('Сколько загрузить: '))
-        if self.__capacity + kolvo <= self.__size:
-            self.__capacity += kolvo
-            self.__curr_station.capacity -= kolvo
+    def loading(self,num):
+        if self.__capacity + num <= self.__size:
+            self.__capacity += num
+            self.__curr_station.capacity -= num
         else:
             buf = self.__size - self.__capacity
             self.__capacity = self.__size

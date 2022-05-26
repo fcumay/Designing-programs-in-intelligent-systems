@@ -38,44 +38,46 @@ KV = """
                 orientation: 'vertical'
                 Label:
                     id:train_goods
-                    text:'Train'
+                    text:'Press any button'
                     
                 Label:
                     id:st_A_goods
-                    text:'Station A'
+                    text:''
 
                 Label:
                     id:st_B_goods
-                    text:'Station B'
+                    text:''
 
                 Label:
                     id:st_C_goods
-                    text:'Station C'
+                    text:''
 
                 Label:
                     id:st_D_goods
-                    text:'Station D'  
+                    text:''  
 
                 Label:
                     id:st_E_goods
-                    text:'Station E'
+                    text:''
 
                 Label:
                     id:st_F_goods
-                    text:'Station F'  
+                    text:''  
                                
             BoxLayout:
                 orientation: 'vertical'
                 spacing:10
                 TextInput:
+                    id:txt
                     hint_text:'Input number'
                 Button:
                     text:'Next station'
                     background_color: .45, .76, .76, .5
-                    on_press: root.update()
+                    on_press:root.next_station(txt.text)
                 Button:
                     text:'Load train'
                     background_color: .45, .76, .76, .5
+                    on_press:root.load(txt.text)
                 Button:
                     text:'Unload train'
                     background_color: .45, .76, .76, .5
