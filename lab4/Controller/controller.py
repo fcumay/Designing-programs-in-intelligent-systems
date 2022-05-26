@@ -39,8 +39,15 @@ class Controller:
             return False
 
     def check_load(self, num):
-        return False if not (num.isdigit()) or self.model.train.curr_station.capacity == 0 or int(
-            num) > self.model.train.curr_station.capacity else True
+        return False if not (num.isdigit()) or int(num) > self.model.train.curr_station.capacity else True
 
     def unload(self, num):
-        self.model.train.unloading(num)
+        if self.check_unload(num):
+            self.model.train.unloading(int(num))
+            return True
+        else:
+            return False
+
+    def check_unload(self, num):
+        return False if not (num.isdigit()) or int(num) > self.model.train.capacity else True
+

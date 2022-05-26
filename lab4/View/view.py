@@ -59,7 +59,9 @@ class MainPage(Screen):
 
     def unload(self, num):
         if num != '':
-            self.controller.unload(int(num))
+            flag=self.controller.unload(num)
+            if not flag:
+                self.ids['txt'].text='Input valid number of goods.'
         self.update()
 
 
