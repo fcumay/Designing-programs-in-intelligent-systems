@@ -8,6 +8,7 @@ class Stats():
         self.name = name
         self.reset_stats()
         self.run_game = True
+        self.new_record=False
         with open(settings.HIGH_SCORE, 'r') as f:
             self.high_score = int(f.readline())
 

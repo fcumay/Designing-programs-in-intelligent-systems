@@ -37,9 +37,10 @@ SUPERINO = 'images/superino.png'
 SUPERINO2 = 'images/star.png'
 
 # move
-SPEED_INO1 = 0.3
+SPEED_INO1 = 10
 SPEED_INO2 = 0.1
 SPEED_INO3 = 0.1
 SPEED_SINO = 0.8
 SPEED_GUN=2
 INOS_POINT=10
+LEVEL=5

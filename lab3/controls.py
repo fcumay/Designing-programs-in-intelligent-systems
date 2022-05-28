@@ -9,7 +9,7 @@ import time
 import menu
 from stats import Stats
 import constants.settings as settings
-
+import new_height
 
 def events(screen, gun, bullets,stats):
     '''Computing events'''
@@ -69,13 +69,13 @@ def update_bullets(screen, stats, sc, inos, bullets):
         sc.image_guns()
     # if all inos are dead
     if len(inos) == 0:
-        if stats.new_level < 5:
+        if stats.new_level < settings.LEVEL:
             bullets.empty()
             create_army(screen, inos)
             stats.new_level += 1
         else:
-            stats.runa_game = False
-            menu.run()
+            new_height.run(stats)
+            stats.run_game = False
 
 
 def gun_kill(stats, screen, sc, gun, inos, bullets):
@@ -89,8 +89,11 @@ def gun_kill(stats, screen, sc, gun, inos, bullets):
         gun.create_gun()
         time.sleep(1)
     else:
+        new_height.run(stats)
         stats.run_game = False
-        menu.run()
+
+
+        # menu.run()
 
 
 def update_inos(stats, screen, sc, gun, inos, bullets):
@@ -157,3 +160,4 @@ def check_high_score(stats, sc):
         with open('high_score.txt', 'w') as f:
             f.write(str(stats.high_score) + '\n')
             f.write(str(stats.name))
+        stats.new_record=True

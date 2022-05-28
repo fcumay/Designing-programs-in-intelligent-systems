@@ -4,6 +4,7 @@ import info
 import input
 import high_score
 import constants.settings as settings
+import new_height
 
 
 def run():
@@ -46,3 +47,4 @@ def run():
                     high_score.run()
                 elif event.key == pygame.K_3:
                     info.run()
+                
