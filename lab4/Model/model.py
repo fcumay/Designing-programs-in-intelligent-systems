@@ -7,7 +7,7 @@ class Model:
 
     def __init__(self):
         self.x = GameMap()
-        self.train = Train(self.x)
+        self.train = Train()
         self.flag = 0
         self.first_time = 0
 
@@ -26,7 +26,6 @@ class Model:
         for line in range(len(self.x.stations)):
             self.x.stations[line].capacity = data[line]
         self.train.capacity = data[len(self.x.stations)]
-        print(self.train.follow_stations)
         return data[len(self.x.stations) + 1]
 
     def run(self, flag):
@@ -89,21 +88,11 @@ class GameMap:
 
 
 class Train:
-    def __init__(self, game_map, size=25, capacity=0):
-        self.__game_map = game_map
-        self.__curr_station = game_map.stations[0]
+
+    def __init__(self, size=25, capacity=0):
         self.__size = size
         self.__capacity = capacity
-
-    def go_to_station(self, key):
-        stations = self.show_stations()
-
-        for i in range(len(stations)):
-            if str(key).lower() == stations[i]:
-                key = i
-
-        self.__curr_station = self.__game_map.graph[self.__curr_station][key]
-        self.show_stations()
+        self.__curr_station = None
 
     def loading(self, num):
         if self.__capacity + num <= self.__size:
@@ -118,17 +107,13 @@ class Train:
         self.__capacity -= num
         self.__curr_station.capacity += num
 
-    def show_stations(self):
-        next_station = [station.name for station in self.__game_map.graph[self.__curr_station]]
-        return next_station
-
-    @property
-    def follow_stations(self):
-        return len(self.__game_map.graph[self.__curr_station])
-
     @property
     def curr_station(self):
         return self.__curr_station
+
+    @curr_station.setter
+    def curr_station(self, station):
+        self.__curr_station = station
 
     @property
     def capacity(self):
@@ -137,10 +122,6 @@ class Train:
     @capacity.setter
     def capacity(self, capacity):
         self.__capacity = capacity
-
-    @curr_station.setter
-    def curr_station(self, station):
-        self.__curr_station = station
 
 
 class Station:

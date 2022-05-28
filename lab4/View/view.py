@@ -55,7 +55,7 @@ class MainPage(Screen):
 
     def next_station(self, station):
         if station != '':
-            flag = self.controller.next_station(station)
+            flag = self.controller.next_station(station.lower())
             if not flag:
                 self.ids['txt'].text = 'Input valid name of station.'
         self.update()

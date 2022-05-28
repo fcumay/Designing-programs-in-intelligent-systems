@@ -14,19 +14,33 @@ class Controller:
     def update(self):
         station = [station.capacity for station in self.model.x.stations]
         station.append(self.model.train.capacity)
-        station.append(self.model.train.curr_station.name)
+        if self.model.train.curr_station == None:
+            station.append(self.model.x.stations[0].name)
+            self.model.train.curr_station = self.model.x.stations[0]
+        else:
+            station.append(self.model.train.curr_station.name)
         return station
 
     def next_station(self, station):
-        if self.check_follow_station(station):
-            self.model.train.go_to_station(station)
+        key = self.check_stations(station)
+        if not key:
+            return False
+        else:
+            self.model.train.curr_station = self.model.x.graph[self.model.train.curr_station][key - 1]
             self.spawn()
             return True
+
+    def check_stations(self, st):
+        if self.model.train.curr_station == None:
+            self.model.train.curr_station = self.model.x.stations[0]
+        next_station = [station.name for station in self.model.x.graph[self.model.train.curr_station]]
+        if st in next_station:
+            for i in range(len(next_station)):
+                if st == next_station[i]:
+                    st = i
+            return st + 1
         else:
             return False
-
-    def check_follow_station(self, station):
-        return True if station.lower() in self.model.train.show_stations() else False
 
     def spawn(self):
         self.model.x.spawn()
