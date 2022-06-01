@@ -5,12 +5,11 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
-from View.ui import KV
 
 from Model.model import Model
 from Controller.controller import Controller
 
-Builder.load_string(KV)
+Builder.load_file(os.path.join(os.path.dirname(__file__), "ui.kv"))
 
 
 class MenuScreen(Screen):
