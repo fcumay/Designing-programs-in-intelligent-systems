@@ -1,7 +1,4 @@
-import math
 import os.path
-from Controller.controller import Controller
-import time
 
 from kivy.config import Config
 
@@ -35,42 +32,27 @@ class MainPage(Screen):
         self.controller = controller
 
     def update(self):
-        self.ids['train_goods'].text = f'={self.controller.update()[-1]}= Train: :  {self.controller.update()[-2]}'
-        self.ids['st_A_goods'].text = f'Station A:  {self.controller.update()[0]}'
-        self.ids['st_B_goods'].text = f'Station B:  {self.controller.update()[1]}'
-        self.ids['st_C_goods'].text = f'Station C:  {self.controller.update()[2]}'
-        self.ids['st_D_goods'].text = f'Station D:  {self.controller.update()[3]}'
-        self.ids['st_E_goods'].text = f'Station E:  {self.controller.update()[4]}'
-        self.ids['st_F_goods'].text = f'Station F:  {self.controller.update()[5]}'
-        if not (self.controller.check_overload()):
-            self.ids['train_goods'].text = 'Oh,no!  :c'
-            self.ids['st_A_goods'].text = 'WASTED'
-            self.ids['st_B_goods'].text = 'Will you try again?'
-            self.ids['st_C_goods'].text = 'Now your score is '
-            self.ids['st_D_goods'].text = self.controller.wasted()
-            self.ids['st_E_goods'].text = ''
-            self.ids['st_F_goods'].text = ''
-            self.ids['txt'].text = 'WASTED'
+        self.ids['train_goods'].text = f'{self.controller.update()[-1]} {self.controller.update()[-2]}'
+        self.ids['st_A_goods'].text = self.controller.update()[0]
+        self.ids['st_B_goods'].text = self.controller.update()[1]
+        self.ids['st_C_goods'].text = self.controller.update()[2]
+        self.ids['st_D_goods'].text = self.controller.update()[3]
+        self.ids['st_E_goods'].text = self.controller.update()[4]
+        self.ids['st_F_goods'].text = self.controller.update()[5]
 
     def next_station(self, station):
         if station != '':
-            flag = self.controller.next_station(station.lower())
-            if not flag:
-                self.ids['txt'].text = 'Input valid name of station.'
+            self.ids['txt'].text = self.controller.next_station(station.lower())
         self.update()
 
     def load(self, num):
         if num != '':
-            flag = self.controller.load(num)
-            if not flag:
-                self.ids['txt'].text = 'Input valid number of goods.'
+            self.ids['txt'].text = self.controller.load(num)
         self.update()
 
     def unload(self, num):
         if num != '':
-            flag = self.controller.unload(num)
-            if not flag:
-                self.ids['txt'].text = 'Input valid number of goods.'
+            self.ids['txt'].text = self.controller.unload(num)
         self.update()
 
 

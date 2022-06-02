@@ -1,6 +1,3 @@
-from Model.model import Model
-
-
 class Controller:
     def __init__(self, model):
         self.model = model
@@ -12,66 +9,35 @@ class Controller:
         self.model.run(2)
 
     def update(self):
-        station = [station.capacity for station in self.model.x.stations]
-        station.append(self.model.train.capacity)
-        if self.model.train.curr_station == None:
-            station.append(self.model.x.stations[0].name)
-            self.model.train.curr_station = self.model.x.stations[0]
-        else:
-            station.append(self.model.train.curr_station.name)
-        return station
-
-    def next_station(self, station):
-        key = self.check_stations(station)
-        if not key:
-            return False
-        else:
-            self.model.train.curr_station = self.model.x.graph[self.model.train.curr_station][key - 1]
-            self.spawn()
-            return True
-
-    def check_stations(self, st):
-        if self.model.train.curr_station == None:
-            self.model.train.curr_station = self.model.x.stations[0]
-        next_station = [station.name for station in self.model.x.graph[self.model.train.curr_station]]
-        if st in next_station:
-            for i in range(len(next_station)):
-                if st == next_station[i]:
-                    st = i
-            return st + 1
-        else:
-            return False
+        return self.model.update()
 
     def spawn(self):
         self.model.x.spawn()
         self.save()
 
-    def load(self, num):
-        if self.check_load(num):
-            self.model.train.loading(int(num))
-            return True
+    def next_station(self, station):
+        if self.model.next_station(station):
+            self.spawn()
+            return ''
         else:
-            return False
+            return 'Input valid name of station.'
 
-    def check_load(self, num):
-        return False if not (num.isdigit()) or int(num) > self.model.train.curr_station.capacity else True
+    def load(self, num):
+        if self.model.check_load(num):
+            self.model.train.loading(int(num))
+            return ''
+        else:
+            return 'Input valid number of goods.'
 
     def unload(self, num):
-        if self.check_unload(num):
+        if self.model.check_unload(num):
             self.model.train.unloading(int(num))
-
-            return True
+            return ''
         else:
-            return False
-
-    def check_unload(self, num):
-        return False if not (num.isdigit()) or int(num) > self.model.train.capacity else True
+            return 'Input valid number of goods.'
 
     def check_overload(self):
         return True if self.model.check_overload() else False
-
-    def wasted(self):
-        return str(self.model.wasted())
 
     def save(self):
         self.model.save()

@@ -1,6 +1,5 @@
 import random
 import time
-from os import system
 
 
 class Model:
@@ -43,6 +42,46 @@ class Model:
     def wasted(self):
         final_time = time.time() - self.first_time
         return round(final_time, 1)
+
+    def update(self):
+        if self.check_overload():
+            station = [f'Station {station.name.upper()} : {station.capacity}' for station in self.x.stations]
+            station.append(f'Train: {self.train.capacity}')
+            if self.train.curr_station == None:
+                station.append(f'={self.x.stations[0].name}=')
+                self.train.curr_station = self.x.stations[0]
+            else:
+                station.append(f'={self.train.curr_station.name}=')
+        else:
+            station = ['Oh,no!  :c', 'WASTED', 'Will you try again?', 'Now your score is', str(self.wasted()), '', '',
+                       'WASTED']
+        return station
+
+    def check_stations(self, st):
+        if self.train.curr_station == None:
+            self.train.curr_station = self.x.stations[0]
+        next_station = [station.name for station in self.x.graph[self.train.curr_station]]
+        if st in next_station:
+            for i in range(len(next_station)):
+                if st == next_station[i]:
+                    st = i
+            return st + 1
+        else:
+            return False
+
+    def next_station(self, station):
+        key = self.check_stations(station)
+        if not key:
+            return False
+        else:
+            self.train.curr_station = self.x.graph[self.train.curr_station][key - 1]
+            return True
+
+    def check_load(self, num):
+        return False if not (num.isdigit()) or int(num) > self.train.curr_station.capacity else True
+
+    def check_unload(self, num):
+        return False if not (num.isdigit()) or int(num) > self.train.capacity else True
 
 
 class GameMap:
