@@ -42,6 +42,3 @@ class GameMap:
         for station in self.__stations:
             print(f'На станции [{str(station.name)}] -- {str(station.capacity)} товаров')
 
-    def __str__(self):
-        for station in self.__stations:
-            print(f'На станции [{str(station.name)}] -- {str(station.capacity)} товаров')
