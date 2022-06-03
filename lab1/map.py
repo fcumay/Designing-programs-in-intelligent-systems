@@ -21,7 +21,6 @@ class GameMap:
     def spawn(self):
         self.__stations[random.randint(0, 5)].capacity += 5
 
-
     @property
     def graph(self):
         return self.__graph
@@ -41,4 +40,3 @@ class GameMap:
     def show_condition(self):
         for station in self.__stations:
             print(f'На станции [{str(station.name)}] -- {str(station.capacity)} товаров')
-

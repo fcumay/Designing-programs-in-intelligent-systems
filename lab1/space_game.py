@@ -24,7 +24,6 @@ def start(file):
         if station.name == option['station']:
             train.curr_station = station
 
-
 def save(x, train):
     dict = {
         "capacity": [station.capacity for station in x.stations],
