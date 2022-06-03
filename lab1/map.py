@@ -39,4 +39,4 @@ class GameMap:
 
     def show_condition(self):
         for station in self.__stations:
-            print(f'На станции [{str(station.name)}] -- {str(station.capacity)} товаров')
+            print(f'На станции [{str(station.name)}] -- {str(station.capacity)} товаров.')

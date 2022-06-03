@@ -64,7 +64,7 @@ if __name__ == '__main__':
     start(file)
     move(x, train)
     print('a--b,c\nb--a,d,e\nc--a,f\nd--b\ne--b,f\nf--c,e')
-    print(f'Поезд на {train.curr_station.name} станции   В поезде {train.capacity}')
+    print(f'Поезд на {train.curr_station.name} станции.   В поезде {train.capacity}')
     x.show_condition()
     save(x, train)
 
